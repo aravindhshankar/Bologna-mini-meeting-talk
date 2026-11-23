@@ -1,0 +1,88 @@
+% ============================================================
+% 1  Mermin-Wagner and the ferromagnetic loophole
+% ============================================================
+\begin{frame}[t]
+\ft{No continuous order in one dimension}\par
+\vspace{0.5cm}
+\centering
+\begin{tikzpicture}[x=0.62cm]
+ \foreach \i in {0,...,16} {
+   \pgfmathsetmacro{\a}{90+55*sin(26*\i)+20*sin(70*\i+40)}
+   \fill[mygray] (\i,0) circle (0.05);
+   \draw[-{Stealth[length=4pt]},thick,cLL] (\i,0) -- ++(\a:0.55);
+ }
+ \node[font=\scriptsize,anchor=west] at (16.5,0.1) {$\theta_x$};
+\end{tikzpicture}\par
+\vspace{0.1cm}
+{\scriptsize U(1) phase $\theta_x$ (spin angle, superfluid phase) wanders through slow \colorbox{citron!40}{\mystrut spin waves}\par}
+\vspace{0.5cm}
+\begin{columns}[c]
+\begin{column}{0.50\textwidth}
+\centering
+{\small$\displaystyle\begin{aligned}
+\big\langle(\theta_x-\theta_0)^2\big\rangle &\propto \int\! \dd k\, \dd\omega\, \frac{1-\cos kx}{\omega^2+k^2} \propto \ln|x|\\[4pt]
+\big\langle e^{i\theta_x}e^{-i\theta_0}\big\rangle &\propto |x|^{-\eta}\;\to\;0
+\end{aligned}$\par}
+\end{column}
+\begin{column}{0.48\textwidth}
+\begin{itemize}
+ \item \colorbox{orchid!30}{\mystrut Mermin--Wagner}: no continuous order in 2D classical, 1+1D quantum
+ \item Best case: power laws, \colorbox{cLL!25}{\mystrut quasi-long-range order}
+ \onslide<2->{\item Assumes 1D quantum $\mapsto$ \colorbox{pumpkin!50}{\mystrut 2D classical}: $\omega\propto k$}
+\end{itemize}
+\end{column}
+\end{columns}
+\vspace{0.5cm}
+{\tiny\color{citegray} N.~D.~Mermin, H.~Wagner, PRL 17, 1133 (1966);\; P.~C.~Hohenberg, PR 158, 383 (1967);\; S.~Coleman, CMP 31, 259 (1973)\par}
+\onslide<2->{\tk{Is there a loophole?}}
+\end{frame}
+% Notes: Hook. A chain of little compasses that may only rotate in a plane (U(1)).
+% Notes: Ordering costs nothing to rotate globally, so long-wavelength twists (spin waves) are cheap.
+% Notes: In 1+1D their fluctuations grow like log of distance: correlations decay as a power law. No true order, only quasi-LRO (Luttinger liquid).
+% Notes: Step 2: the standard argument maps the 1D quantum chain to a 2D classical model, with time as a second space direction. That needs space and time on equal footing (z=1). Keep that assumption in mind.
+
+
+\begin{frame}[t]
+\ft{The ferromagnetic loophole}
+\begin{columns}[T]
+\begin{column}{0.48\textwidth}
+\centering
+\vspace{0.15cm}
+$\displaystyle \mathcal L = \colorbox{orchid!30}{$\mystrut i\rho\,\partial_\tau\theta$} + \frac{\rho^2}{2\chi} + \frac{\rho_s}{2}(\partial_x\theta)^2$\\[4pt]
+{\scriptsize\colorbox{orchid!30}{\mystrut Berry phase}: density $\rho=S^z$ is conjugate to $\theta$;\\ first order in time, not a classical weight\par}
+\end{column}
+\begin{column}{0.48\textwidth}
+\begin{itemize}
+ \item Ferromagnets, bosons: \colorbox{citron!40}{\mystrut Berry phase}
+ \onslide<2->{\item At the critical point $1/\chi\to0$:\\ density cost $\rho^2\to(\partial_x\rho)^2$}
+\end{itemize}
+\end{column}
+\end{columns}
+\vspace{0.45cm}
+\begin{columns}[T]
+\begin{column}{0.48\textwidth}
+\centering
+\colorbox{cLL!20}{\parbox{0.92\linewidth}{\centering\footnotesize
+ \textbf{\color{cLL}Luttinger liquid}\ \ $\omega\propto k$,\ $z=1$\\[3pt]
+ $\displaystyle\langle\delta\theta^2\rangle\propto\int\!\dd k\,\dd\omega\,\frac{1}{\omega^2+k^2}\sim\int\!\frac{\dd k}{k}=\infty$}}
+\end{column}
+\begin{column}{0.48\textwidth}
+\centering
+\onslide<2->{\colorbox{cQCP!15}{\parbox{0.92\linewidth}{\centering\footnotesize
+ \textbf{\color{cQCP}Critical point}\ \ $\omega\propto k^2$,\ $z=2$\\[3pt]
+ $\displaystyle\langle\delta\theta^2\rangle\propto\int\!\dd k\,\dd\omega\,\frac{k^2}{\omega^2+k^4}\sim\int\!\dd k\ \ \text{finite}$}}}
+\end{column}
+\end{columns}
+\vspace{0.45cm}
+\onslide<3->{%
+\centering
+{\footnotesize\colorbox{pumpkin!50}{\mystrut For the expert}\ \ $K(\partial_\tau\phi)^2$ not renormalized $\Rightarrow[\partial_x\phi]=\tfrac{3-z}{2}$;\ \ unbroken U(1): $[\rho]=1$\\[3pt]
+$\Rightarrow$\ \colorbox{cQCP!15}{\mystrut $z\neq1$ forces U(1) breaking}\par}
+\vspace{0.1cm}
+{\tiny\color{citegray} M.~P.~A.~Fisher, G.~Grinstein, S.~M.~Girvin, PRL 64, 587 (1990);\; X.-G.~Wen, PRB 46, 2655 (1992);\; S.~Sachdev, Z.~Phys.~B 94, 469 (1994)\par}}
+\tk{Soft density $\Rightarrow$ stiff phase}
+\end{frame}
+% Notes: Ferromagnets have a Berry phase: the magnetization density rho=S^z is the momentum conjugate to the angle theta. This term is first order in imaginary time, so the Euclidean weight is complex: no classical stat-mech model to map to.
+% Notes: Berry phase alone is not enough (left box): with a finite susceptibility we are back to omega ~ k and log fluctuations.
+% Notes: Step 2: at the ferromagnetic critical point the uniform susceptibility diverges; the density costs only gradients. Integrating out rho now gives theta a k^2/(omega^2+k^4) propagator: the infrared integral converges. Phase fluctuations are finite: true order is allowed.
+% Notes: Step 3 (experts): nonperturbative version. Interactions only involve gradients of phi, so the (d_tau phi)^2 coefficient is not renormalized; this fixes [d_x phi]=(3-z)/2. A conserved, unbroken U(1) density must have dimension 1, which needs z=1. Any z != 1 forces symmetry breaking.

@@ -1,0 +1,15 @@
+# source paper (public on arXiv, not needed to build)
+2609.38581.pdf
+# LaTeX build files
+*.aux
+*.log
+*.nav
+*.snm
+*.toc
+*.out
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.vrb
+.DS_Store
+talk/preview.pdf

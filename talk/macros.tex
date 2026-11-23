@@ -1,0 +1,32 @@
+% ============================================================
+% Talk-specific macros
+% ============================================================
+\title[Criticality-enabled U(1) order in 1D]{Continuous symmetry breaking in one dimension,\\ enabled by criticality}
+\author[A. S. Shankar]{Aravindh Swaminathan Shankar \\[2pt] {\footnotesize ashankar@ictp.it}\\[4pt]
+{\scriptsize with E.~S.~Andriyakhina, T.~Senthil, Z.~D.~Shi}}
+\institute[ICTP]{Abdus Salam ICTP, Trieste, Italy}
+\date[Bologna 2026]{Bologna mini-meeting 2026}
+
+% category colours (one per phase, used everywhere; match the DMRG curve colours)
+\definecolor{cLL}{RGB}{31,119,180}    % Luttinger liquid (= DeltaV=3.20 curve, blue)
+\definecolor{cQCP}{RGB}{214,39,40}    % critical point (= DeltaV=3.55 curve, red)
+\definecolor{cFM}{RGB}{143,40,194}    % ferromagnet (orchid)
+
+% frame title + optional grey take-away line
+% \ft does not end its paragraph: if the body starts with anything but `columns`, write \ft{...}\par
+\newcommand{\ft}[1]{\vspace*{0.25cm}\textbf{#1}\smallskip\par\noindent{\color{mygray}\rule[1.0ex]{\linewidth}{0.5pt}}\vspace*{-0.35cm}}
+\newcommand{\tk}[1]{\par\vfill\noindent\colorbox{LightGray}{\parbox{\dimexpr\linewidth-2\fboxsep}{\centering\small #1}}\vspace*{-0.2cm}}
+
+% recurring picture: the phase line in the tuning parameter (lambda_2 or Delta V)
+% \phaseline{left label}{right label}
+\newcommand{\phaseline}[2]{%
+\begin{tikzpicture}[font=\scriptsize]
+ \draw[cLL,line width=3pt] (0,0)--(2.4,0);
+ \draw[cFM,line width=3pt] (2.4,0)--(4.8,0);
+ \draw[-{Stealth},thick] (4.8,0)--(5.2,0) node[right,black] {#2};
+ \fill[cQCP] (2.4,0) circle (0.13);
+ \node[cLL,above] at (1.2,0.08) {Luttinger liquid};
+ \node[cFM,above] at (3.6,0.08) {ferromagnet};
+ \node[cQCP,below] at (2.4,-0.12) {QCP};
+ \node[left] at (-0.05,0) {#1};
+\end{tikzpicture}}

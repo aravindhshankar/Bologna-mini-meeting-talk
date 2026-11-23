@@ -1,0 +1,17 @@
+% ============================================================
+% Talk-specific macros: edit the title block for each talk
+% ============================================================
+\title[Short title]{Full title of the talk}
+\author[A. S. Shankar]{Aravindh Swaminathan Shankar \\[2pt] {\footnotesize email@institute}\\[4pt]
+{\scriptsize with Collaborator One, Collaborator Two}}
+\institute[Inst]{Institute, City, Country}
+\date[CONF 20XX]{Conference 20XX}
+
+% Fixed colours for the talk's recurring categories (regimes, phases, methods ...).
+% One colour per category, used everywhere in the deck. Example:
+% \definecolor{cKondo}{RGB}{40,80,230}
+
+% frame title + optional grey take-away line
+% \ft does not end its paragraph: if the body starts with anything but `columns`, write \ft{...}\par
+\newcommand{\ft}[1]{\vspace*{0.25cm}\textbf{#1}\smallskip\par\noindent{\color{mygray}\rule[1.0ex]{\linewidth}{0.5pt}}\vspace*{-0.35cm}}
+\newcommand{\tk}[1]{\par\vfill\noindent\colorbox{LightGray}{\parbox{\dimexpr\linewidth-2\fboxsep}{\centering\small #1}}\vspace*{-0.2cm}}

@@ -1,0 +1,66 @@
+% ============================================================
+% 5  Conclusion, outlook, ragazzi
+% ============================================================
+\begin{frame}[t]
+\ft{Order enabled by criticality}\par
+\vspace{0.4cm}
+\centering
+\phaseline{$\Delta V$}{}\par
+\vspace{0.35cm}
+{\small\setlength{\tabcolsep}{8pt}\renewcommand{\arraystretch}{1.45}
+\begin{tabular}{@{}l c c@{}}
+ & \textbf{\color{cLL}Luttinger liquid} & \textbf{\color{cQCP}critical point}\\ \hline
+ dispersion & $\omega\propto k$ & $\omega\propto k^2$\\
+ nematic $\langle\mathcal O^\dagger_x\mathcal O_0\rangle$ & $|x|^{-4/K_s}$ & \colorbox{cQCP!15}{\mystrut const: true order}\\
+ electron $C(x)$ & power law & \colorbox{cQCP!15}{\mystrut $e^{-c\,x^{2/3}}$}\\
+\end{tabular}\par}
+\vspace{0.4cm}
+\vspace{-0.1cm}
+{\small\setlength{\tabcolsep}{5pt}\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{@{}r l@{}}
+ \textbf{Outlook:} & \colorbox{citron!40}{\mystrut quantum simulators}: only short-range density interactions\\
+ & relation to \colorbox{orchid!25}{\mystrut frustration-free} U(1)-breaking chains\\
+ & \colorbox{pumpkin!50}{\mystrut non-Abelian} order from Wess--Zumino--Witten terms
+\end{tabular}\par}
+\vspace{0.05cm}
+{\tiny\color{citegray} H.~Watanabe, H.~Katsura, J.~Y.~Lee, PRL 133, 176001 (2024)\par}
+\tk{Mermin--Wagner evaded at a $z\neq1$ critical point, in a simple fermion chain}
+\end{frame}
+% Notes: The picture: tune Delta V. Luttinger liquid on one side, ferromagnet on the other; exactly at the critical point a continuous U(1) symmetry is spontaneously broken in 1D.
+% Notes: Lattice signatures: nematic LRO with zero magnetization; stretched-exponential electron Green's function, close to the large-N 2/3.
+% Notes: Outlook: the model only needs short-range density interactions -> cold atoms / quantum simulators. Open: how this relates to frustration-free U(1)-breaking models (Anderson tower vs exact O(L) degeneracy). Can criticality enable non-Abelian order (WZW terms instead of Berry phases)?
+
+
+\newcommand{\ragazzo}[3]{%
+\begin{minipage}[t]{2.3cm}\centering
+\IfFileExists{ragazzi/#1}{\includegraphics[height=2.3cm]{ragazzi/#1}}%
+{\fcolorbox{mygraylight}{LightGray}{\parbox[c][2.2cm][c]{1.7cm}{\centering\tiny photo}}}\\[3pt]
+{\footnotesize #2\par}{\tiny\color{citegray} #3\par}
+\end{minipage}}
+
+\begin{frame}[t]
+\ft{Grazie, ragazzi!}\par
+\vspace{0.45cm}
+\begin{columns}[c]
+\begin{column}{0.66\textwidth}
+\centering
+\ragazzo{andriyakhina.jpg}{E.~S.~Andriyakhina}{FU Berlin \& MIT}\hfill
+\ragazzo{senthil.jpg}{T.~Senthil}{MIT}\hfill
+\ragazzo{shi.jpg}{Z.~D.~Shi}{Stanford}\par
+\vspace{0.6cm}
+\includegraphics[width=0.75\linewidth]{figures/logo_ictp.png}\par
+\end{column}
+\begin{column}{0.32\textwidth}
+\centering
+\qrcode[height=2.3cm]{https://arxiv.org/abs/2609.38581}\\[4pt]
+{\footnotesize arXiv:2609.38581\par}
+\vspace{0.4cm}
+\colorbox{citron!40}{\mystrut ashankar@ictp.it}\par
+\end{column}
+\end{columns}
+\vspace{0.6cm}
+\centering
+{\footnotesize\emph{Theory of criticality-enabled U(1) symmetry breaking in a class of 1+1D systems}\\
+E.~S.~Andriyakhina, A.~S.~Shankar, T.~Senthil, Z.~D.~Shi\par}
+\end{frame}
+% Notes: Thank the collaborators; leave this slide up for questions. QR code points to the arXiv abstract.
