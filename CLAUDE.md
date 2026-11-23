@@ -17,8 +17,12 @@ arXiv:2609.38581 (`2609.38581.pdf`, public arXiv preprint).
 
 ## Talk-specific rules
 - Audience: very general, plus a couple of experts. Each physics step gets an intuitive
-  picture for the general audience and one compact "for the expert" element (usually an
-  overlay step or a small equation).
+  picture for the general audience; expert content goes in as a later overlay step or a small
+  equation. Never label it "for the expert" (user, 2026-11-23: "sort of obnoxious").
+- No specific numerical parameter values on slides (user, 2026-11-23); symbols only
+  (e.g. ΔV_c). Numbers inside borrowed paper figures are fine.
+- Integrals and derivations: reveal them in steps with overlays (one or two intermediate
+  steps) so the punchline lands; familiar case first (e.g. 2+1D before 1+1D).
 - The user's own contribution is the LATTICE MODEL (itinerant fermion chain, bosonization,
   DMRG/iDMRG). The large-N field theory is the co-authors' work: present it as a sketch
   (why x^{2/3}), and give the lattice slides the weight.
@@ -27,6 +31,13 @@ arXiv:2609.38581 (`2609.38581.pdf`, public arXiv preprint).
   means keep more terms; K_s→∞ at finite lattice coupling = a critical point" → lattice model
   and true LRO → large-N sketch of the 2/3 stretched exponential and the numerics showing it
   → conclusion/outlook → "ragazzi" thank-you slide with collaborator photos.
+- Colours: only the user's palette (orchid, pumpkin, citron, tomato, spinach, ... in
+  preamble.tex). NO teal. NO gray boxes or panels: gray is reserved for the bottom \tk panel
+  (user, 2026-11-23). Lattice drawings may use gray lines/dots.
+- Hamiltonian term colours (`talk/macros.tex`): hopping `cT`=spinach, on-site `cU`=pumpkin,
+  same-spin `cVpp`=citron, opposite-spin `cVpm`=orchid; pictures, H and the K formulas use
+  them. Electrons are TikZ pics `eup`/`edn` (glossy blue ball + spin arrow).
+- Lattice model facts: ΔV = V+- − V++ (V++ fixed); FM when opposite-spin repulsion wins.
 - Recurring categories and colours (`talk/macros.tex`): Luttinger liquid `cLL` (blue, = the
   ΔV=3.20 curve), critical point `cQCP` (red, = the ΔV=3.55 curve), ferromagnet `cFM`.
   Avoid tomato highlights on slides with the red QCP curve.

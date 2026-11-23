@@ -44,7 +44,9 @@ Page numbers below: PDF pages (main text p1–7, supplement p8–22 = S1–S15).
 
 ### Lattice model (the user's part; p1, p4–5, supp. p17–22)
 - H = −t Σ (c†iσ c_{i+1,σ} + h.c.) + U Σ n_i↑ n_i↓ + Σ V_{σσ'} n_iσ n_{i+1,σ'}.
-  V↑↑ = V↓↓ = V++, V↑↓ = V↓↑ = V+-. t = 1, U = 0.1, V+- = 0.8 fixed; tune ΔV = V++ − V+-.
+  V↑↑ = V↓↓ = V++, V↑↓ = V↓↑ = V+-. t = 1, U = 0.1, V++ = 0.8 fixed; tune ΔV = V+- − V++
+  (checked on the rendered p4, 2026-11-23; an earlier note had this backwards).
+  FM needs opposite-spin repulsion to win: V+- > V++.
   1/4 filling per spin species, k_F = π/4. Symmetry U(1) ⋊ Z2.
 - Spin sector maps exactly to the compact Lifshitz theory (K. Yang PRL 93, 066401 (2004));
   also Sachdev & Senthil Ann. Phys. 251, 76 (1996); Kozii et al. PRB 96, 094419 (2017).
@@ -97,6 +99,40 @@ All crops are 400-dpi PNGs of the arXiv PDF.
 - 2026-11-23: deck = title + 10 frames (MW, FM loophole, LL Taylor, lattice model, order
   parameter, LRO, large N, Green's function, conclusion, ragazzi).
 
+- 2026-11-23: slide 1 rebuilt per user: U(1) order parameter (amplitude + phase), phase action
+  from symmetry, G = 1/(ω²+k²), 2+1D (finite) then 1+1D (log) integral in overlay steps. Committed.
+- 2026-11-23: slide 2 split in two (too dense for one frame): 2a "Spins carry a Berry phase"
+  (spin on a sphere, Berry phase = S × solid angle → −iSᶻ∂τθ, so Sᶻ conjugate to θ; slide-1
+  action needs finite χ), 2b "The ferromagnetic loophole" (χ→∞: k²/(ω²+k⁴), integral finite;
+  exact [ρ]=(3−z)/2 argument). No "for the expert" labels. Deck now 12 frames incl. title.
+
+- 2026-11-23: Berry-phase sphere slide moved to backup (99_backup.tex): no room in 10 min.
+  New slide 2 "A one-dimensional itinerant ferromagnet" introduces the lattice system with
+  pictures (chain + couplings, small/large ΔV cartoons, magnetization plot); old model slide in
+  03_lattice removed. Loophole slide is now slide 3 with a one-line Lagrangian (Berry term).
+  User: do not show numerical parameter values (t, U, V+-, ΔV_crit); write ΔV_c.
+  Main deck: 11 frames incl. title and ragazzi, + 1 backup.
+
+- 2026-11-23: restructure per user. Loophole slide (Berry phase, χ→∞, z≠1) moved to backup:
+  the explanation is now done directly on the fermion chain. New order: MW → "Electrons on a
+  chain" (one coloured picture per H term, H at bottom in matching colours, 1/4 filling per
+  spin as a generic choice, knob ΔV) → "Tuning ΔV: a ferromagnetic transition" (cartoons +
+  Fig. S6) → "Bosonization: electrons as waves" (band, R/L movers, density ripples, charge and
+  spin) → "Each lattice term in the field theory" (H_c + H_s, term-by-term table, K_{c/s}
+  formula from p. 4, K_s→∞ = ferromagnet) → Taylor/Lifshitz → ... Term colours in macros.tex
+  (cT, cU, cVpp, cVpm). Slide 1 integral steps now replace each other in place.
+  Main deck: 13 frames incl. title and ragazzi (over the 10–12 target), + 2 backup.
+
+- 2026-11-23 (user feedback): one long continuous chain with each H term drawn where it acts;
+  electrons as glossy blue balls; user's palette only (no teal, no gray boxes: gray only for
+  the bottom panel); ΔV = V+- − V++ (I had it backwards: verify formulas on the rendered page).
+  Field-theory slide reworked around "cost of magnetizing" (Fermi-sea picture, each term
+  costs/saves), ends with H_c + H_s, K_{c/s} (paper p4) and K_s^{-2} = 1 − (U+2ΔV)/πv_F → 0 at
+  finite ΔV, plus "..." = higher powers/gradients. Next slide "Near the transition: keep more
+  terms": Landau E(m) curves (LL parabola, QCP quartic, FM double well) → Lifshitz L.
+  The microscopic origin of the "..." terms (band curvature → m^4, interaction range →
+  (∂x m)^2) is my physical reading, not stated in the paper: user to confirm.
+
 ## Timing plan (≈ 10 min)
 MW 1:00 · FM loophole 1:15 · Taylor/Lifshitz 1:15 · lattice model 1:00 · order parameter 0:45 ·
 LRO 1:00 · large N 1:15 · Green's fn 0:45 · conclusion 1:00 · thanks 0:15.
@@ -112,8 +148,7 @@ LRO 1:00 · large N 1:15 · Green's fn 0:45 · conclusion 1:00 · thanks 0:15.
   O(L) degeneracy there.
 
 ## Open items
-- K_s formula sign: with ΔV = V++ − V+- > 0 the perturbative K_s = (1 − U/πv_F + 2ΔV/πv_F)^{-1/2}
-  DEcreases; the talk only says "K_s grows and diverges at ΔV_crit" (from Fig. 1 trend and
-  text). Ask the user which convention/sign to show if a formula is wanted.
+- (resolved 2026-11-23) K_s sign: with the correct ΔV = V+- − V++,
+  K_s^{-2} = 1 − (U + 2ΔV)/πv_F → K_s diverges at finite ΔV, consistent with the paper.
 - Collaborator photos for talk/ragazzi/ (andriyakhina.jpg, senthil.jpg, shi.jpg).
 - Meeting name/date for the title block (currently "Bologna mini-meeting 2026").

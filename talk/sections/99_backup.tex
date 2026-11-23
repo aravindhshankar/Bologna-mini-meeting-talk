@@ -1,0 +1,87 @@
+% ============================================================
+% Backup slides
+% ============================================================
+\begin{frame}[t]
+\ft{Spins carry a Berry phase}\par
+\vspace{0.5cm}
+\begin{columns}[c]
+\begin{column}{0.34\textwidth}
+\centering
+% spin coherent state on the sphere: polar angle vartheta, azimuth theta; shaded cap = solid angle swept
+\begin{tikzpicture}[scale=1.2,font=\scriptsize]
+ \fill[orchid!20] (0,0.62) ellipse (0.78 and 0.2);
+ \draw[orchid,thick] (0,0.62) ellipse (0.78 and 0.2);
+ \draw[mygray] (0,0) circle (1);
+ \draw[mygray,densely dashed] (0,0) ellipse (1 and 0.28);
+ \draw[-{Stealth[length=3pt]},mygray] (0,0)--(0,1.3) node[right]{$S^z$};
+ \draw[-{Stealth[length=5pt]},very thick,cLL] (0,0)--(0.6,0.49);
+ \draw[mygray] (0,0.38) arc (90:39:0.38);
+ \node at (0.13,0.24) {$\vartheta$};
+ \draw[-{Stealth[length=3pt]},cLL,thick] (0.45,-0.27) arc (-70:-20:0.55 and 0.3);
+ \node[cLL] at (0.88,-0.32) {$\theta$};
+ \node[orchid] at (-0.95,0.75) {$\Omega$};
+\end{tikzpicture}\par
+\end{column}
+\begin{column}{0.64\textwidth}
+{\small Spin $=$ point on a sphere, angles $(\vartheta,\theta)$\par}
+\vspace{0.15cm}
+{\small\colorbox{orchid!30}{\mystrut Berry phase} $=S\times$ area $\Omega$ swept:\par}
+\vspace{0.1cm}
+{\small$\displaystyle iS\!\int\!\dd\tau\,(1-\cos\vartheta)\,\partial_\tau\theta=-i\!\int\!\dd\tau\,S^z\,\partial_\tau\theta+\text{bdry}$\par}
+\vspace{0.15cm}
+{\small$\Rightarrow$ \colorbox{citron!40}{\mystrut $\rho=S^z$ is conjugate to $\theta$}, like $p\,\dot q$\par}
+\end{column}
+\end{columns}
+\vspace{0.8cm}
+\onslide<2->{%
+\centering
+$\displaystyle \mathcal L=-i\rho\,\partial_\tau\theta+\colorbox{pumpkin!50}{$\mystrut\frac{\rho^2}{2\chi}$}+\frac{\rho_s}{2}(\partial_x\theta)^2
+\ \ \xrightarrow{\ \int\!\rho\ }\ \ \frac{\chi}{2}(\partial_\tau\theta)^2+\frac{\rho_s}{2}(\partial_x\theta)^2$\par
+\vspace{0.1cm}
+{\footnotesize density cost $\rho^2/2\chi$ set by the \colorbox{pumpkin!50}{\mystrut susceptibility $\chi$}\par}}
+\onslide<2->{\tk{Slide 1's $(\partial_\tau\theta)^2$ assumed a finite susceptibility $\chi$}}
+\end{frame}
+% Notes: Step 1: Where does the time-derivative term of slide 1 come from? Think of one spin: a point on a sphere, polar angle vartheta, azimuth theta. Quantum mechanics gives it a Berry phase: S times the area enclosed on the sphere. Written in the angles it is i S (1-cos vartheta) d_tau theta; since S cos vartheta = S^z, this is -i S^z d_tau theta plus a boundary term: S^z is the momentum conjugate to the angle theta, exactly like p qdot. (Same for bosons: psi = sqrt(rho) e^{i theta}.)
+% Notes: Step 2: Full theory: Berry phase + energy cost of density fluctuations rho^2/2chi + phase stiffness. Integrating out rho gives back chi/2 (d_tau theta)^2: the slide-1 action. So slide 1 silently assumed the susceptibility chi is finite.
+
+
+\begin{frame}[t]
+\ft{The ferromagnetic loophole}\par
+\vspace{0.35cm}
+\centering
+{\small$\displaystyle\mathcal L=-\colorbox{orchid!30}{$\mystrut i\rho\,\partial_\tau\theta$}+\frac{\rho^2}{2\chi}+\frac{\rho_s}{2}(\partial_x\theta)^2$\par}
+{\scriptsize \colorbox{orchid!30}{\mystrut Berry phase}: density $\rho=S^z$ is conjugate to $\theta$;\ \ $\chi$: susceptibility\par}
+\raggedright
+\vspace{0.3cm}
+\begin{columns}[T]
+\begin{column}{0.40\textwidth}
+\centering
+\colorbox{cLL!20}{\parbox{0.92\linewidth}{\centering\footnotesize
+ \textbf{finite $\chi$}\ \ (slide 1)\\[3pt]
+ $\langle\theta\theta\rangle_{\omega,k}=\dfrac{1}{\chi\omega^2+\rho_sk^2}$,\ \ $\omega\propto k$\\[5pt]
+ \onslide<2->{$\langle(\theta_x-\theta_0)^2\rangle\propto\displaystyle\int\!\dd k\,\dd\omega\,\frac{1-\cos kx}{\chi\omega^2+\rho_sk^2}$}\\[5pt]
+ \onslide<3->{$\sim\displaystyle\int_{1/|x|}\!\frac{\dd k}{k}$\ \ \textbf{diverges}: no order}}}
+\end{column}
+\begin{column}{0.56\textwidth}
+\centering
+\colorbox{cQCP!15}{\parbox{0.94\linewidth}{\centering\footnotesize
+ \textbf{critical point}: $\chi\to\infty$,\ \ $\dfrac{\rho^2}{2\chi}\to\dfrac{(\partial_x\rho)^2}{2}$\\[3pt]
+ $\langle\theta\theta\rangle_{\omega,k}=\dfrac{k^2}{\omega^2+k^4}$,\ \ $\omega\propto k^2$\\[5pt]
+ \onslide<2->{$\langle(\theta_x-\theta_0)^2\rangle\propto\displaystyle\int\!\dd k\,\dd\omega\,\frac{k^2\,(1-\cos kx)}{\omega^2+k^4}$}\\[5pt]
+ \onslide<3->{$=\displaystyle\int\!\dd k\,\frac{1-\cos kx}{2}$\ \ \textbf{finite}: order survives}}}
+\end{column}
+\end{columns}
+\vspace{0.25cm}
+\onslide<4->{%
+\centering
+{\footnotesize\colorbox{citron!40}{\mystrut Beyond Gaussian}\ \ $K(\partial_\tau\phi)^2$ not renormalized, $\rho=\partial_x\phi$\ $\Rightarrow\ [\rho]=\tfrac{3-z}{2}$;\ \ unbroken U(1): $[\rho]=1$\par}
+\vspace{0.05cm}
+{\footnotesize$\Rightarrow$\ \colorbox{cQCP!15}{\mystrut $z\neq1$ forces U(1) breaking}\par}
+\vspace{0.05cm}
+{\tiny\color{citegray} M.~P.~A.~Fisher, G.~Grinstein, S.~M.~Girvin, PRL 64, 587 (1990);\; X.-G.~Wen, PRB 46, 2655 (1992);\; S.~Sachdev, Z.~Phys.~B 94, 469 (1994)\par}}
+\onslide<3->{\tk{Soft density $\Rightarrow$ stiff phase}}
+\end{frame}
+% Notes: The phase theta of the order parameter has a partner: the density rho = S^z (Berry phase, backup slide: spin on a sphere). Energy cost of density fluctuations rho^2/2chi; integrating out rho with finite chi gives the slide-1 action.\n% Notes: At a ferromagnetic critical point the magnet is about to polarize: the uniform susceptibility diverges. The rho^2 cost vanishes and the leading cost is a gradient, (d_x rho)^2.
+% Notes: Left box: slide 1 (finite chi): omega ~ k, log divergence. Right box: integrating out rho now gives the theta propagator k^2/(omega^2+k^4), omega ~ k^2 (z = 2).
+% Notes: Steps 2-3: redo the integral: the omega integral gives a constant, the 1/k is gone, the phase fluctuation is finite: order survives in 1+1D. The density is soft, so the phase is stiff.
+% Notes: Step 4: Nonperturbative version (paper): with rho = d_x phi, interactions only involve gradients of phi, so the K (d_tau phi)^2 term is not renormalized; this fixes [rho] = (3-z)/2. An unbroken, conserved U(1) density must have dimension 1 (Fisher-Grinstein-Girvin, Wen, Sachdev), which needs z = 1. Any z != 1 forces the U(1) to break.

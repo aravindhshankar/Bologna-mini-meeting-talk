@@ -30,3 +30,19 @@
  \node[cQCP,below] at (2.4,-0.12) {QCP};
  \node[left] at (-0.05,0) {#1};
 \end{tikzpicture}}
+
+% Hamiltonian term colours (pictures, H and the K formulas use the same colour per term)
+\colorlet{cT}{spinach}                % hopping t
+\colorlet{cU}{pumpkin!85!black}       % on-site U
+\colorlet{cVpp}{citron!75!black}      % same-spin neighbours V_{++}
+\colorlet{cVpm}{orchid}               % opposite-spin neighbours V_{+-} (wins -> ferromagnet)
+
+% electrons: glossy blue balls with a spin arrow; eghost = where an electron hops to
+\tikzset{
+ eup/.pic={\shade[ball color=blue!45!cyan] (0,0) circle (0.16);
+           \draw[-{Stealth[length=4pt,width=4.5pt]},line width=1.3pt,black] (0,-0.27)--(0,0.31);},
+ edn/.pic={\shade[ball color=blue!45!cyan] (0,0) circle (0.16);
+           \draw[-{Stealth[length=4pt,width=4.5pt]},line width=1.3pt,black] (0,0.27)--(0,-0.31);},
+ eghost/.pic={\draw[densely dashed,blue!45!cyan,thick] (0,0) circle (0.16);},
+ repel/.style={decorate,decoration={zigzag,amplitude=1.4pt,segment length=3.2pt},line width=1.1pt},
+}

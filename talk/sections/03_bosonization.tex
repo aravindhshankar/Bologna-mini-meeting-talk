@@ -1,0 +1,127 @@
+% ============================================================
+% 3  Bosonization: from the lattice model to charge and spin Luttinger liquids
+% ============================================================
+\begin{frame}[t]
+\ft{Bosonization: electrons as waves}\par
+\vspace{0.3cm}
+\begin{columns}[c]
+\begin{column}{0.42\textwidth}
+\centering
+% band -2t cos k, filled up to k_F, linearized at the two Fermi points
+\begin{tikzpicture}[font=\scriptsize]
+ \draw[-{Stealth[length=3pt]},mygray] (-2.2,0)--(2.3,0) node[right]{$k$};
+ \draw[-{Stealth[length=3pt]},mygray] (0,-1.0)--(0,1.05) node[above]{$\varepsilon_k$};
+ \draw[mygray,thick,domain=-2:2,samples=60] plot (\x,{-0.8*cos(90*\x)});
+ \draw[cT,line width=2pt,domain=-0.5:0.5,samples=20] plot (\x,{-0.8*cos(90*\x)});
+ \draw[mygray,densely dotted] (-2.1,-0.566)--(2.1,-0.566);
+ \node[mygraydark,anchor=west] at (1.25,-0.45) {$\varepsilon_F$};
+ \draw[black!75,thick] (0.1,-0.922)--(0.95,-0.166);
+ \draw[black!75,thick] (-0.1,-0.922)--(-0.95,-0.166);
+ \fill[black] (0.5,-0.566) circle (0.05); \fill[black] (-0.5,-0.566) circle (0.05);
+ \node at (1.05,-0.05) {R};
+ \node at (-1.05,-0.05) {L};
+ \node[below] at (0.55,-0.95) {$k_F$};
+ \node[below] at (-0.55,-0.95) {$-k_F$};
+\end{tikzpicture}\par
+\vspace{0.05cm}
+{\scriptsize band from \textcolor{cT}{hopping $t$}, filled up to $k_F$\par}
+\end{column}
+\begin{column}{0.56\textwidth}
+{\small Low energy: only states near \colorbox{spinach!20}{\mystrut $\pm k_F$}:\\ right and left movers, speed $v_F$\par}
+\vspace{0.35cm}
+\onslide<2->{%
+{\small particle--hole pairs $=$ \colorbox{citron!40}{\mystrut density ripples}: bosons\par}
+\vspace{0.15cm}
+{\small$\rho_\sigma(x)=\dfrac{1}{\sqrt\pi}\,\partial_x\phi_\sigma$,\qquad $\theta_\sigma$: conjugate phase\par}}
+\end{column}
+\end{columns}
+\vspace{0.4cm}
+\onslide<3->{%
+\begin{columns}[T]
+\begin{column}{0.48\textwidth}
+\centering
+\begin{tikzpicture}[font=\scriptsize]
+ \fill[cLL!10,rounded corners=4pt] (-0.2,-0.55) rectangle (4.6,0.75);
+ \draw[thick,black!80,domain=0:4.4,samples=60] plot (\x,{0.3+0.18*sin(160*\x)});
+ \draw[thick,black!80,densely dashed,domain=0:4.4,samples=60] plot (\x,{-0.2+0.18*sin(160*\x)});
+ \node[anchor=west] at (4.6,0.3) {$\rho_\uparrow$};
+ \node[anchor=west] at (4.6,-0.2) {$\rho_\downarrow$};
+\end{tikzpicture}\\[3pt]
+{\footnotesize \colorbox{cLL!20}{\mystrut charge}: together,\ \ $\phi_c=\tfrac{\phi_\uparrow+\phi_\downarrow}{\sqrt2}$\par}
+\end{column}
+\begin{column}{0.48\textwidth}
+\centering
+\begin{tikzpicture}[font=\scriptsize]
+ \fill[orchid!10,rounded corners=4pt] (-0.2,-0.55) rectangle (4.6,0.75);
+ \draw[thick,black!80,domain=0:4.4,samples=60] plot (\x,{0.3+0.18*sin(160*\x)});
+ \draw[thick,black!80,densely dashed,domain=0:4.4,samples=60] plot (\x,{-0.2-0.18*sin(160*\x)});
+ \node[anchor=west] at (4.6,0.3) {$\rho_\uparrow$};
+ \node[anchor=west] at (4.6,-0.2) {$\rho_\downarrow$};
+\end{tikzpicture}\\[3pt]
+{\footnotesize \colorbox{orchid!25}{\mystrut spin}: opposite,\ \ $\phi_s=\tfrac{\phi_\uparrow-\phi_\downarrow}{\sqrt2}$\par}
+\end{column}
+\end{columns}
+\vspace{0.15cm}
+\centering
+{\small density $\rho=\sqrt{\tfrac2\pi}\,\partial_x\phi_c$,\qquad magnetization $S^z=\tfrac{1}{\sqrt{2\pi}}\,\partial_x\phi_s$\par}}
+\onslide<3->{\tk{Charge and spin become two independent waves}}
+\end{frame}
+% Notes: Step 1: Hopping gives a band; we fill it up to k_F (quarter filling per spin: k_F = pi/4). At low energy only electrons near the two Fermi points matter; there the band is a straight line: right movers and left movers with speed v_F.
+% Notes: Step 2: In 1D the low-energy excitations are particle-hole pairs, and these are just ripples of the density: sound waves, bosons. Write the density of each spin as a gradient of a field phi; theta is its conjugate phase.
+% Notes: Step 3: Combine up and down. Ripples where up and down move together are charge waves (phi_c); ripples where they move oppositely are spin waves (phi_s). The density is d_x phi_c, the magnetization S^z is d_x phi_s.
+
+
+\begin{frame}[t]
+\ft{Each lattice term in the field theory}\par
+\vspace{0.35cm}
+\begin{columns}[c]
+\begin{column}{0.38\textwidth}
+\centering
+% the two Fermi seas (up, down); magnetizing moves electrons from down to up
+\begin{tikzpicture}[font=\scriptsize]
+ \foreach \xo/\lab in {0/{$\uparrow$},2.3/{$\downarrow$}} {
+   \draw[gray,thick,domain=-0.85:0.85,samples=40] plot (\xo+\x,{-0.6*cos(180*\x)});
+   \node at (\xo,-0.95) {\lab};}
+ \only<1>{%
+   \draw[blue!55!cyan,line width=2.4pt,domain=-0.33:0.33,samples=20] plot (\x,{-0.6*cos(180*\x)});
+   \draw[blue!55!cyan,line width=2.4pt,domain=-0.33:0.33,samples=20] plot (2.3+\x,{-0.6*cos(180*\x)});
+   \draw[densely dotted] (-0.85,-0.3)--(3.15,-0.3) node[right]{$\varepsilon_F$};}
+ \only<2->{%
+   \draw[blue!55!cyan,line width=2.4pt,domain=-0.45:0.45,samples=20] plot (\x,{-0.6*cos(180*\x)});
+   \draw[blue!55!cyan,line width=2.4pt,domain=-0.18:0.18,samples=20] plot (2.3+\x,{-0.6*cos(180*\x)});
+   \draw[densely dotted] (-0.85,-0.1)--(0.85,-0.1);
+   \draw[densely dotted] (1.45,-0.5)--(3.15,-0.5);
+   \draw[-{Stealth[length=5pt]},thick,orchid] (2.05,-0.4) to[bend right=40] node[above,font=\scriptsize]{$m$} (0.3,0.05);}
+\end{tikzpicture}\par
+\vspace{0.1cm}
+{\footnotesize\only<1>{equal Fermi seas: $\langle S^z\rangle=0$}\only<2->{magnetize: move electrons $\downarrow\to\uparrow$}\par}
+\end{column}
+\begin{column}{0.60\textwidth}
+{\small energy cost of a magnetization $m$:\par}
+\vspace{0.1cm}
+{\footnotesize\setlength{\tabcolsep}{4pt}\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{@{}l l l@{}}
+ \onslide<2->{\colorbox{cT!15}{\mystrut hopping ${\color{cT}t}$}} & \onslide<2->{kinetic energy rises (Pauli)} & \onslide<2->{\textbf{costs}}\\
+ \onslide<3->{\colorbox{cU!15}{\mystrut on-site ${\color{cU}U}$}} & \onslide<3->{fewer $\uparrow\downarrow$ on a site} & \onslide<3->{\textbf{saves}}\\
+ \onslide<4->{\colorbox{cVpp!15}{\mystrut same ${\color{cVpp}V_{++}}$}} & \onslide<4->{more same-spin neighbours} & \onslide<4->{\textbf{costs}}\\
+ \onslide<5->{\colorbox{cVpm!15}{\mystrut opposite ${\color{cVpm}V_{+-}}$}} & \onslide<5->{fewer opposite-spin neighbours} & \onslide<5->{\textbf{saves}}\\
+\end{tabular}\par}
+\end{column}
+\end{columns}
+\vspace{0.35cm}
+\centering
+\onslide<6->{%
+{\small$\displaystyle H=\sum_{\nu=c,s}\frac{v_\nu}{2}\int\!\dd x\,\Big[K_\nu(\partial_x\theta_\nu)^2+\frac{1}{K_\nu}(\partial_x\phi_\nu)^2\Big]+\dots$\qquad $m=\tfrac{1}{\sqrt{2\pi}}\partial_x\phi_s$\par}
+\vspace{0.1cm}
+{\small$\displaystyle K_{c/s}=\Big(1\pm\frac{{\color{cU}U}}{\pi{\color{cT}v_F}}+\frac{2\,({\color{cVpp}V_{++}}\pm{\color{cVpm}V_{+-}})}{\pi{\color{cT}v_F}}\Big)^{-1/2}$\par}}
+\vspace{0.1cm}
+\onslide<7->{%
+{\small spin: \colorbox{orchid!25}{\mystrut $K_s^{-2}=1-\dfrac{{\color{cU}U}+2\,\Delta V}{\pi{\color{cT}v_F}}\to0$} at a finite $\Delta V$\par}
+\vspace{0.05cm}
+{\footnotesize $\dots$: higher powers and gradients of $\partial_x\phi_s$ (band curvature, interaction range)\par}}
+\onslide<7->{\tk{Magnetizing gets cheaper as $\Delta V$ grows: $K_s\to\infty$}}
+\end{frame}
+% Notes: How does each lattice term enter the long-wavelength theory? Ask what it costs to magnetize: move some electrons from the down Fermi sea to the up one (step 2 picture).
+% Notes: Hopping: the extra up electrons sit higher in the band: kinetic energy costs (Pauli). U: fewer sites with both spins: saves. V++: more same-spin neighbours: costs. V+-: fewer opposite-spin neighbours: saves.
+% Notes: Step 6: Bosonized, these are the coefficients of (d_x phi)^2: one Luttinger liquid for charge, one for spin, with Luttinger parameters K_c, K_s (paper, p. 4, perturbative).
+% Notes: Step 7: In the spin sector, U and Delta V = V+- - V++ both make magnetizing cheaper: K_s^{-2} = 1 - (U + 2 Delta V)/(pi v_F) reaches zero at a FINITE coupling: K_s diverges there. That is the ferromagnetic transition (the actual Delta V_c is renormalized; DMRG finds it). The "..." are the terms we dropped: higher powers and gradients of d_x phi_s. Next slide: near the transition we need them.

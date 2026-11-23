@@ -45,21 +45,24 @@
 \begin{columns}[T]
 \begin{column}{0.48\textwidth}
 \centering
-\onslide<3->{\colorbox{mygraylight!60}{\parbox{0.92\linewidth}{\centering\footnotesize
- \textbf{2+1D}\\[1pt]
- $\langle(\theta_x-\theta_0)^2\rangle\propto\int\!\dd^2k\,\dd\omega\,\frac{1-\cos k\cdot x}{\omega^2+k^2}$\\[3pt]
- \onslide<4->{$=\int\!\dd^2k\,\frac{1-\cos k\cdot x}{2|k|}$}\\[3pt]
- \onslide<5->{$\sim\int\!\frac{k\,\dd k}{k}$\ \ \textbf{finite}}\\[4pt]
- \onslide<5->{$\langle e^{i\theta_x}e^{-i\theta_0}\rangle\to$ const:\ order survives}}}}
+% each step replaces the previous one in a fixed-height slot, so nothing jumps
+\onslide<3->{\colorbox{spinach!15}{\parbox{0.92\linewidth}{\centering\footnotesize
+ \textbf{2+1D}:\ \ $\langle(\theta_x-\theta_0)^2\rangle$\\[2pt]
+ \parbox[c][1.05cm][c]{\linewidth}{\centering
+ \only<-3>{$\displaystyle\propto\int\!\dd^2k\,\dd\omega\,\frac{1-\cos k\cdot x}{\omega^2+k^2}$}%
+ \only<4>{$\displaystyle\propto\int\!\dd^2k\,\frac{1-\cos k\cdot x}{2|k|}$}%
+ \only<5->{$\displaystyle\sim\int\!\frac{k\,\dd k}{k}$\ \ \textbf{finite}}}\\[2pt]
+ \onslide<5->{$\langle e^{i\theta_x}e^{-i\theta_0}\rangle\to$ const:\ \textbf{order survives}}}}}
 \end{column}
 \begin{column}{0.48\textwidth}
 \centering
 \onslide<6->{\colorbox{cLL!20}{\parbox{0.92\linewidth}{\centering\footnotesize
- \textbf{1+1D}\\[1pt]
- $\langle(\theta_x-\theta_0)^2\rangle\propto\int\!\dd k\,\dd\omega\,\frac{1-\cos kx}{\omega^2+k^2}$\\[3pt]
- \onslide<7->{$=\int\!\dd k\,\frac{1-\cos kx}{2|k|}$}\\[3pt]
- \onslide<8->{$\sim\int_{1/|x|}^{\Lambda}\!\frac{\dd k}{k}=\ln\Lambda|x|$\ \ \textbf{diverges}}\\[4pt]
- \onslide<8->{$\langle e^{i\theta_x}e^{-i\theta_0}\rangle\propto|x|^{-\eta}\to0$:\ no order}}}}
+ \textbf{1+1D}:\ \ $\langle(\theta_x-\theta_0)^2\rangle$\\[2pt]
+ \parbox[c][1.05cm][c]{\linewidth}{\centering
+ \only<-6>{$\displaystyle\propto\int\!\dd k\,\dd\omega\,\frac{1-\cos kx}{\omega^2+k^2}$}%
+ \only<7>{$\displaystyle\propto\int\!\dd k\,\frac{1-\cos kx}{2|k|}$}%
+ \only<8->{$\displaystyle\sim\int_{1/|x|}^{\Lambda}\!\frac{\dd k}{k}=\ln\Lambda|x|$\ \ \textbf{diverges}}}\\[2pt]
+ \onslide<8->{$\langle e^{i\theta_x}e^{-i\theta_0}\rangle\propto|x|^{-\eta}\to0$:\ \textbf{no order}}}}}
 \end{column}
 \end{columns}
 \vspace{0.05cm}
@@ -70,49 +73,3 @@
 % Notes: Step 2: So the phase can vary in space and time (the arrows). Write the cheapest action that respects theta -> theta + const: no theta^2 term allowed, only gradients; lowest order is one time and one space derivative squared. Its Green's function is 1/(omega^2 + k^2).
 % Notes: Steps 3-5 (2+1D first, the familiar case): how much does the phase wander between two distant points? Do the frequency integral: 1/|k|. In two dimensions the measure d^2k = k dk eats the 1/k: the integral is finite. The phase stays put on average, <e^{i theta} e^{-i theta}> -> const: a superfluid / XY magnet orders.
 % Notes: Steps 6-8 (1+1D): same steps, but now the measure is only dk. The 1-cos(kx) cuts the integral off at k ~ 1/|x|: we get ln(Lambda |x|), growing without bound. Then <e^{i theta} e^{-i theta}> = exp(-1/2 <dtheta^2>) ~ |x|^{-eta}: power law, order is destroyed. This is Mermin-Wagner (Coleman for 1+1D quantum).
-
-
-\begin{frame}[t]
-\ft{The ferromagnetic loophole}
-\begin{columns}[T]
-\begin{column}{0.48\textwidth}
-\centering
-\vspace{0.15cm}
-$\displaystyle \mathcal L = \colorbox{orchid!30}{$\mystrut i\rho\,\partial_\tau\theta$} + \frac{\rho^2}{2\chi} + \frac{\rho_s}{2}(\partial_x\theta)^2$\\[4pt]
-{\scriptsize\colorbox{orchid!30}{\mystrut Berry phase}: density $\rho=S^z$ is conjugate to $\theta$;\\ first order in time, not a classical weight\par}
-\end{column}
-\begin{column}{0.48\textwidth}
-\begin{itemize}
- \item Ferromagnets, bosons: \colorbox{citron!40}{\mystrut Berry phase}
- \onslide<2->{\item At the critical point $1/\chi\to0$:\\ density cost $\rho^2\to(\partial_x\rho)^2$}
-\end{itemize}
-\end{column}
-\end{columns}
-\vspace{0.45cm}
-\begin{columns}[T]
-\begin{column}{0.48\textwidth}
-\centering
-\colorbox{cLL!20}{\parbox{0.92\linewidth}{\centering\footnotesize
- \textbf{\color{cLL}Luttinger liquid}\ \ $\omega\propto k$,\ $z=1$\\[3pt]
- $\displaystyle\langle\delta\theta^2\rangle\propto\int\!\dd k\,\dd\omega\,\frac{1}{\omega^2+k^2}\sim\int\!\frac{\dd k}{k}=\infty$}}
-\end{column}
-\begin{column}{0.48\textwidth}
-\centering
-\onslide<2->{\colorbox{cQCP!15}{\parbox{0.92\linewidth}{\centering\footnotesize
- \textbf{\color{cQCP}Critical point}\ \ $\omega\propto k^2$,\ $z=2$\\[3pt]
- $\displaystyle\langle\delta\theta^2\rangle\propto\int\!\dd k\,\dd\omega\,\frac{k^2}{\omega^2+k^4}\sim\int\!\dd k\ \ \text{finite}$}}}
-\end{column}
-\end{columns}
-\vspace{0.45cm}
-\onslide<3->{%
-\centering
-{\footnotesize\colorbox{pumpkin!50}{\mystrut For the expert}\ \ $K(\partial_\tau\phi)^2$ not renormalized $\Rightarrow[\partial_x\phi]=\tfrac{3-z}{2}$;\ \ unbroken U(1): $[\rho]=1$\\[3pt]
-$\Rightarrow$\ \colorbox{cQCP!15}{\mystrut $z\neq1$ forces U(1) breaking}\par}
-\vspace{0.1cm}
-{\tiny\color{citegray} M.~P.~A.~Fisher, G.~Grinstein, S.~M.~Girvin, PRL 64, 587 (1990);\; X.-G.~Wen, PRB 46, 2655 (1992);\; S.~Sachdev, Z.~Phys.~B 94, 469 (1994)\par}}
-\tk{Soft density $\Rightarrow$ stiff phase}
-\end{frame}
-% Notes: Ferromagnets have a Berry phase: the magnetization density rho=S^z is the momentum conjugate to the angle theta. This term is first order in imaginary time, so the Euclidean weight is complex: no classical stat-mech model to map to.
-% Notes: Berry phase alone is not enough (left box): with a finite susceptibility we are back to omega ~ k and log fluctuations.
-% Notes: Step 2: at the ferromagnetic critical point the uniform susceptibility diverges; the density costs only gradients. Integrating out rho now gives theta a k^2/(omega^2+k^4) propagator: the infrared integral converges. Phase fluctuations are finite: true order is allowed.
-% Notes: Step 3 (experts): nonperturbative version. Interactions only involve gradients of phi, so the (d_tau phi)^2 coefficient is not renormalized; this fixes [d_x phi]=(3-z)/2. A conserved, unbroken U(1) density must have dimension 1, which needs z=1. Any z != 1 forces symmetry breaking.

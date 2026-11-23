@@ -2,64 +2,6 @@
 % 3  The lattice model, its order parameter, true LRO
 % ============================================================
 \begin{frame}[t]
-\ft{A chain of spinful fermions}
-\begin{columns}[T]
-\begin{column}{0.50\textwidth}
-\centering
-\vspace{0.5cm}
-\begin{tikzpicture}[x=0.74cm,y=1.15cm,
-  up/.style={-{Stealth[length=3pt]},thick,cLL!80!black},
-  dn/.style={-{Stealth[length=3pt]},thick,cFM}]
- \draw[mygray,thick] (-0.3,0)--(6.3,0);
- \foreach \i in {0,...,6} \fill[mygray] (\i,0) circle (0.07);
- % hopping
- \draw[up] (0,0.08)--(0,0.42);
- \draw[-{Stealth[length=3pt]},thin] (0.1,0.5) to[bend left=50] node[above,font=\scriptsize]{$t$} (0.9,0.5);
- % on-site U
- \draw[up] (1.93,0.08)--(1.93,0.42); \draw[dn] (2.07,0.42)--(2.07,0.08);
- \node[font=\scriptsize] at (2,0.68) {$U$};
- % V++
- \draw[up] (3,0.08)--(3,0.42); \draw[up] (4,0.08)--(4,0.42);
- \draw[cQCP,densely dashed,thick] (3.1,0.25)--(3.9,0.25);
- \node[font=\scriptsize,cQCP] at (3.5,0.68) {$V_{++}$};
- % V+-
- \draw[up] (5,0.08)--(5,0.42); \draw[dn] (6,0.42)--(6,0.08);
- \draw[densely dashed,thick] (5.1,0.25)--(5.9,0.25);
- \node[font=\scriptsize] at (5.5,0.68) {$V_{+-}$};
-\end{tikzpicture}\par
-\vspace{0.4cm}
-{\small\setlength{\tabcolsep}{6pt}\renewcommand{\arraystretch}{1.35}
-\begin{tabular}{@{}l l@{}}
- $t=1$ & hopping\\
- $U=0.1$ & on-site repulsion\\
- $V_{+-}=0.8$ & neighbours, $\uparrow\downarrow$\\
- \rowcolor{cQCP!15} $\Delta V=V_{++}-V_{+-}$ & \textbf{tuning knob}\\
-\end{tabular}\par}
-\vspace{0.3cm}
-{\scriptsize $\tfrac14$ filling per spin, $k_F=\pi/4$;\ \ symmetry U(1)$\rtimes\mathbb Z_2$\par}
-\vspace{0.1cm}
-{\tiny\color{citegray} K.~Yang, PRL 93, 066401 (2004)\par}
-\end{column}
-\begin{column}{0.48\textwidth}
-\centering
-\vspace{0.35cm}
-\onslide<2->{%
-\includegraphics[width=\linewidth]{figures/paper_figS6_magnetization.png}\par
-\vspace{0.1cm}
-{\footnotesize $\langle S^z\rangle$ sets in continuously at \colorbox{cQCP!15}{\mystrut $\Delta V_\text{crit}\approx3.55$}\par}
-{\scriptsize finite DMRG ($N$) and iDMRG ($\chi$)\par}
-\vspace{0.25cm}
-{\footnotesize \colorbox{citron!40}{\mystrut $K_s\to\infty$}: spin sector $=$ Lifshitz theory\par}}
-\end{column}
-\end{columns}
-\end{frame}
-% Notes: This is my part: a concrete lattice model where K_s really diverges. Electrons with spin on a chain, quarter filling per spin.
-% Notes: Hopping t, tiny on-site U, and nearest-neighbour density interactions that depend on the spins: same spin V++, opposite spin V+-. The knob is the difference Delta V.
-% Notes: K. Yang showed the spin sector of such a model is exactly the compact Lifshitz theory near the ferromagnetic transition.
-% Notes: Step 2: DMRG (finite chains N=64,128,256, and infinite iDMRG). The magnetization switches on continuously at Delta V_crit ~ 3.55: second-order transition, ~|dV-dVc|^0.42. Phase separation on the FM side, as Nahum predicted.
-
-
-\begin{frame}[t]
 \ft{Which operator orders?}\par
 \vspace{0.5cm}
 \begin{columns}[c]
@@ -71,7 +13,7 @@
 \end{column}
 \begin{column}{0.52\textwidth}
 {\small
-\colorbox{mygraylight}{\mystrut Spin flip}\\[5pt]
+\colorbox{orchid!25}{\mystrut Spin flip}\\[5pt]
 $S^+_i\sim e^{-i\sqrt{2\pi}\theta_s}\big[\cos\sqrt{2\pi}\phi_c+\dots\big]$\\[2pt]
 {\footnotesize carries the \colorbox{pumpkin!50}{\mystrut charge} Luttinger liquid along\par}
 \vspace{0.6cm}
