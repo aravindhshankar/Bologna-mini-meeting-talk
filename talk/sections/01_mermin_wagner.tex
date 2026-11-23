@@ -3,43 +3,73 @@
 % ============================================================
 \begin{frame}[t]
 \ft{No continuous order in one dimension}\par
-\vspace{0.5cm}
-\centering
-\begin{tikzpicture}[x=0.62cm]
- \foreach \i in {0,...,16} {
-   \pgfmathsetmacro{\a}{90+55*sin(26*\i)+20*sin(70*\i+40)}
-   \fill[mygray] (\i,0) circle (0.05);
-   \draw[-{Stealth[length=4pt]},thick,cLL] (\i,0) -- ++(\a:0.55);
- }
- \node[font=\scriptsize,anchor=west] at (16.5,0.1) {$\theta_x$};
-\end{tikzpicture}\par
-\vspace{0.1cm}
-{\scriptsize U(1) phase $\theta_x$ (spin angle, superfluid phase) wanders through slow \colorbox{citron!40}{\mystrut spin waves}\par}
-\vspace{0.5cm}
+\vspace{0.3cm}
 \begin{columns}[c]
-\begin{column}{0.50\textwidth}
+\begin{column}{0.34\textwidth}
 \centering
-{\small$\displaystyle\begin{aligned}
-\big\langle(\theta_x-\theta_0)^2\big\rangle &\propto \int\! \dd k\, \dd\omega\, \frac{1-\cos kx}{\omega^2+k^2} \propto \ln|x|\\[4pt]
-\big\langle e^{i\theta_x}e^{-i\theta_0}\big\rangle &\propto |x|^{-\eta}\;\to\;0
-\end{aligned}$\par}
+% order parameter in the complex plane: amplitude fixed on the ring, phase free
+\begin{tikzpicture}[scale=0.8,font=\scriptsize]
+ \draw[-{Stealth[length=3pt]},mygray] (-1.25,0)--(1.35,0) node[right]{Re\,$\psi$};
+ \draw[-{Stealth[length=3pt]},mygray] (0,-1.2)--(0,1.3) node[above]{Im\,$\psi$};
+ \draw[pumpkin,line width=1.6pt] (0,0) circle (0.95);
+ \draw[-{Stealth[length=5pt]},very thick,cLL] (0,0)--(40:0.95);
+ \draw[cLL] (0.35,0) arc (0:40:0.35);
+ \node[cLL] at (20:0.55) {$\theta$};
+ \node[pumpkin!80!black,anchor=west] at (-62:1.0) {$|\psi|=\sqrt{\rho_0}$};
+\end{tikzpicture}\par
 \end{column}
-\begin{column}{0.48\textwidth}
-\begin{itemize}
- \item \colorbox{orchid!30}{\mystrut Mermin--Wagner}: no continuous order in 2D classical, 1+1D quantum
- \item Best case: power laws, \colorbox{cLL!25}{\mystrut quasi-long-range order}
- \onslide<2->{\item Assumes 1D quantum $\mapsto$ \colorbox{pumpkin!50}{\mystrut 2D classical}: $\omega\propto k$}
-\end{itemize}
+\begin{column}{0.64\textwidth}
+{\small U(1) order parameter\ \ $\psi=\colorbox{pumpkin!50}{$\mystrut\sqrt{\rho_0}$}\,e^{i{\color{cLL}\theta}}$\par}
+\vspace{0.1cm}
+{\footnotesize ordered: \colorbox{pumpkin!50}{\mystrut amplitude} fixed by the condensate,\\ only the \colorbox{cLL!20}{\mystrut phase} can vary\par}
+\vspace{0.2cm}
+\onslide<2->{%
+\begin{tikzpicture}[x=0.42cm]
+ \foreach \i in {0,...,13} {
+   \pgfmathsetmacro{\a}{40+55*sin(24*\i)}
+   \fill[mygray] (\i,0) circle (0.04);
+   \draw[-{Stealth[length=4.5pt,width=4pt]},thick,cLL] (\i,0) -- ++(\a:0.5);
+ }
+ \node[font=\scriptsize,anchor=west] at (13.5,0.15) {$\theta(x,\tau)$};
+\end{tikzpicture}\par}
 \end{column}
 \end{columns}
-\vspace{0.5cm}
+\vspace{0.1cm}
+\onslide<2->{%
+\centering
+{\small$\displaystyle S=\frac{\rho_s}{2}\!\int\!\dd\tau\,\dd x\,\Big[(\partial_\tau\theta)^2+(\partial_x\theta)^2\Big]
+\quad\Rightarrow\quad \langle\theta\theta\rangle_{\omega,k}=\frac{1}{\rho_s(\omega^2+k^2)}$\par}
+\vspace{0.05cm}
+{\scriptsize lowest order in gradients allowed by the symmetry \colorbox{citron!40}{\mystrut $\theta\to\theta+\text{const}$}\par}}
+\vspace{0.15cm}
+\begin{columns}[T]
+\begin{column}{0.48\textwidth}
+\centering
+\onslide<3->{\colorbox{mygraylight!60}{\parbox{0.92\linewidth}{\centering\footnotesize
+ \textbf{2+1D}\\[1pt]
+ $\langle(\theta_x-\theta_0)^2\rangle\propto\int\!\dd^2k\,\dd\omega\,\frac{1-\cos k\cdot x}{\omega^2+k^2}$\\[3pt]
+ \onslide<4->{$=\int\!\dd^2k\,\frac{1-\cos k\cdot x}{2|k|}$}\\[3pt]
+ \onslide<5->{$\sim\int\!\frac{k\,\dd k}{k}$\ \ \textbf{finite}}\\[4pt]
+ \onslide<5->{$\langle e^{i\theta_x}e^{-i\theta_0}\rangle\to$ const:\ order survives}}}}
+\end{column}
+\begin{column}{0.48\textwidth}
+\centering
+\onslide<6->{\colorbox{cLL!20}{\parbox{0.92\linewidth}{\centering\footnotesize
+ \textbf{1+1D}\\[1pt]
+ $\langle(\theta_x-\theta_0)^2\rangle\propto\int\!\dd k\,\dd\omega\,\frac{1-\cos kx}{\omega^2+k^2}$\\[3pt]
+ \onslide<7->{$=\int\!\dd k\,\frac{1-\cos kx}{2|k|}$}\\[3pt]
+ \onslide<8->{$\sim\int_{1/|x|}^{\Lambda}\!\frac{\dd k}{k}=\ln\Lambda|x|$\ \ \textbf{diverges}}\\[4pt]
+ \onslide<8->{$\langle e^{i\theta_x}e^{-i\theta_0}\rangle\propto|x|^{-\eta}\to0$:\ no order}}}}
+\end{column}
+\end{columns}
+\vspace{0.05cm}
 {\tiny\color{citegray} N.~D.~Mermin, H.~Wagner, PRL 17, 1133 (1966);\; P.~C.~Hohenberg, PR 158, 383 (1967);\; S.~Coleman, CMP 31, 259 (1973)\par}
-\onslide<2->{\tk{Is there a loophole?}}
+\onslide<8->{\tk{In 1+1D, phase fluctuations destroy order (Mermin--Wagner)}}
 \end{frame}
-% Notes: Hook. A chain of little compasses that may only rotate in a plane (U(1)).
-% Notes: Ordering costs nothing to rotate globally, so long-wavelength twists (spin waves) are cheap.
-% Notes: In 1+1D their fluctuations grow like log of distance: correlations decay as a power law. No true order, only quasi-LRO (Luttinger liquid).
-% Notes: Step 2: the standard argument maps the 1D quantum chain to a 2D classical model, with time as a second space direction. That needs space and time on equal footing (z=1). Keep that assumption in mind.
+% Notes: Step 1: A U(1) order parameter is a complex number: an amplitude and a phase (superfluid, XY magnet). Suppose we are ordered: the amplitude is pinned by the condensate density rho_0 (the orange ring), but the phase theta can point anywhere on the ring: all directions cost the same.
+% Notes: Step 2: So the phase can vary in space and time (the arrows). Write the cheapest action that respects theta -> theta + const: no theta^2 term allowed, only gradients; lowest order is one time and one space derivative squared. Its Green's function is 1/(omega^2 + k^2).
+% Notes: Steps 3-5 (2+1D first, the familiar case): how much does the phase wander between two distant points? Do the frequency integral: 1/|k|. In two dimensions the measure d^2k = k dk eats the 1/k: the integral is finite. The phase stays put on average, <e^{i theta} e^{-i theta}> -> const: a superfluid / XY magnet orders.
+% Notes: Steps 6-8 (1+1D): same steps, but now the measure is only dk. The 1-cos(kx) cuts the integral off at k ~ 1/|x|: we get ln(Lambda |x|), growing without bound. Then <e^{i theta} e^{-i theta}> = exp(-1/2 <dtheta^2>) ~ |x|^{-eta}: power law, order is destroyed. This is Mermin-Wagner (Coleman for 1+1D quantum).
 
 
 \begin{frame}[t]
