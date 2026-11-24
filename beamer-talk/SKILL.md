@@ -33,7 +33,7 @@ Kit: `template/` (copy into the project). Reference slides the user approved:
 ## 2. Work loop, one slide at a time
 1. Discuss the slide with the user.
 2. Write a short spec in chat: title, figure, at most 3 bullets or one equation, take-away line
-   (or none), overlay steps.
+   (usually none), overlay steps.
 3. Wait for the user's OK. Do not build before it.
 4. Build, render, check against the alignment list (section 4), then tell the user it is ready.
 5. When the user accepts and it compiles: commit (one short message line, include the
@@ -49,6 +49,12 @@ session and ask before overwriting or committing their uncommitted changes.
 - Sonnet subagent: a new frame, a new TikZ drawing, figure crops, a first layout.
 - Haiku subagent: mechanical bulk work (renames, swapping a figure, the same edit in many places).
 - Pick by a quick guess. Never let Opus and a subagent edit the same file at once.
+- Lessons loop: `builder_lessons.md` (next to this file) lists every mistake the builder made.
+  The builder reads it at start-up. Each time Opus or the user fixes something the builder
+  should have caught, Opus appends one dated line there (in the live skill AND the kit copy)
+  and tells the builder. Keep ONE builder alive per session (resume it with SendMessage). When
+  its context gets large, retire it and start a fresh one: it reloads the skill and the lessons
+  from disk.
 - Give the subagent the exact section file and the agreed spec; it must not read the whole
   deck or the papers. It compiles, renders the changed frame(s) to PNG, checks them, reports.
   Opus then looks only at the final render.
@@ -78,8 +84,9 @@ two overlay steps. The colour link does the explaining.
 **Titles.** Short: one phrase of about 4–7 words ("van Hove singularities in the flat band",
 "Kondo revival at the magic angle"). Never a full sentence with a colon and two clauses.
 
-**Take-away line** (`\tk{}`, grey box at the bottom). Optional. Only when the slide has a real
-punchline ("every slide doesn't need a clickbait punchline"). Short; a question is fine.
+**Take-away line** (`\tk{}`, grey box at the bottom). Default: NONE. Add one only when the
+slide has a real punchline ("every slide doesn't need a clickbait punchline"); do not put one
+in a spec by reflex, and leave it off intermediate or set-up slides. Short; a question is fine.
 
 **Show, don't describe.** Where a sentence would explain a feature (of a band structure, a
 mechanism ...), draw or compute a picture of it instead.

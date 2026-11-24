@@ -24,13 +24,16 @@ arXiv:2609.38581 (`2609.38581.pdf`, public arXiv preprint).
 - Integrals and derivations: reveal them in steps with overlays (one or two intermediate
   steps) so the punchline lands; familiar case first (e.g. 2+1D before 1+1D).
 - The user's own contribution is the LATTICE MODEL (itinerant fermion chain, bosonization,
-  DMRG/iDMRG). The large-N field theory is the co-authors' work: present it as a sketch
-  (why x^{2/3}), and give the lattice slides the weight.
-- Agreed flow (user, 2026-11-23): Mermin–Wagner → ferromagnetic field theory, Berry phase,
-  z≠1 is the loophole → Lifshitz theory via "Luttinger liquid is a Taylor expansion; K_s→∞
-  means keep more terms; K_s→∞ at finite lattice coupling = a critical point" → lattice model
-  and true LRO → large-N sketch of the 2/3 stretched exponential and the numerics showing it
-  → conclusion/outlook → "ragazzi" thank-you slide with collaborator photos.
+  DMRG/iDMRG). The large-N field theory is the co-authors' work and too technical for this
+  audience: flash only its x^{2/3} prediction (user, 2026-11-24); the lattice slides carry the talk.
+- Agreed flow (user, 2026-11-24): Mermin–Wagner → electrons on a chain → what each term
+  does to magnetization → tuning ΔV (FM transition) → bosonization → small ΔV: ordinary LL
+  (Fig. S4) → near ΔV_c: K_s→∞, next terms, z=2 Lifshitz → why e^{iθ} should order (slide-1
+  integral at z=2) → which operator orders (S⁺ fails, nematic O) → true LRO → stretched
+  exponential (large-N result flashed only; large-N slide in backup) → conclusion → ragazzi.
+  The order-parameter arc is the meat of the talk.
+- No \tk take-away line by default; only on slides with a real punchline, never on set-up or
+  intermediate slides (user, 2026-11-24: "every slide doesn't need a take-away line").
 - Colours: only the user's palette (orchid, pumpkin, citron, tomato, spinach, ... in
   preamble.tex). NO teal. NO gray boxes or panels: gray is reserved for the bottom \tk panel
   (user, 2026-11-23). Lattice drawings may use gray lines/dots.
@@ -43,6 +46,14 @@ arXiv:2609.38581 (`2609.38581.pdf`, public arXiv preprint).
   Avoid tomato highlights on slides with the red QCP curve.
 - Ragazzi slide: collaborator photos go in `talk/ragazzi/` (`andriyakhina.jpg`, `senthil.jpg`,
   `shi.jpg`); a grey placeholder box shows until the file exists.
+
+- Slide building (user, 2026-11-24): keep ONE Sonnet builder subagent alive for the session and
+  resume it with SendMessage (it already has the skill loaded); don't spawn fresh ones. It
+  self-reviews its render before reporting (labels next to what they name, no touching
+  elements, one colour per symbol, alignment list) so Opus only does small final touches.
+  Every mistake Opus or the user fixes goes as a dated line into
+  `~/.claude/skills/beamer-talk/builder_lessons.md` (+ kit copy) and is sent to the builder;
+  a fresh builder reads that file at start-up (user, 2026-11-24).
 
 ## Layout
 ```

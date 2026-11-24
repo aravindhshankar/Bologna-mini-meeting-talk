@@ -57,6 +57,49 @@
 % Notes: Step 3 (citron): V++: same-spin electrons on neighbouring sites repel.
 % Notes: Step 4 (orchid): V+-: opposite-spin electrons on neighbouring sites repel.
 % Notes: Step 5: we fix the number of electrons: a quarter filling per spin (nothing special about 1/4, any generic filling would do). V++ is fixed; the knob is Delta V = V+- - V++: how much more opposite spins repel than equal spins. When opposite spins repel strongly, aligning the spins pays off: that is where the ferromagnet comes from.
+\begin{frame}[t]
+\ft{What each term does to magnetization}\par
+\vspace{1.1cm}
+\centering
+% two copies of the chain: top <S^z>=0, bottom magnetized (same electron number); one term per step, marked on both
+\begin{tikzpicture}[font=\footnotesize,every pic/.style={scale=1.15}]
+ \def\yt{4.7}\def\yb{2.8}
+ \foreach \yc in {\yt,\yb} {
+   \draw[gray,thick] (-0.35,\yc)--(7.1,\yc);
+   \foreach \i in {0,...,9} \fill[gray] ({0.75*\i},\yc) circle (0.055);}
+ \node[anchor=east] at (-0.5,{\yt+0.42}) {$\langle S^z\rangle=0$};
+ \node[anchor=east] at (-0.5,{\yb+0.42}) {magnetized};
+ % U: doubly occupied sites
+ \onslide<1->{%
+ \fill[cU!25,rounded corners=5pt] (1.65,{\yt-0.2}) rectangle (2.85,{\yt+1.05});
+ \node[cU,anchor=west] at (7.4,{\yt+0.42}) {$U$: \textbf{saves}};}
+ % electrons: top = mixed spins with one doubly occupied site; bottom = mostly up, no double site
+ \foreach \x/\p in {0/eup,0.75/edn,2.01/eup,2.49/edn,4.5/edn,5.25/eup} \path (\x,{\yt+0.42}) pic {\p};
+ \foreach \x/\p in {0/eup,0.75/eup,1.5/eup,3/eup,3.75/eup,6/edn} \path (\x,{\yb+0.42}) pic {\p};
+ % V++: bonds between neighbouring same-spin electrons
+ \onslide<2->{%
+ \foreach \x in {0,0.75,3} \draw[repel,cVpp] ({\x+0.22},{\yb+0.42})--({\x+0.53},{\yb+0.42});
+ \node[cVpp,anchor=west] at (7.4,{\yt-0.05}) {$V_{++}$: \textbf{costs}};}
+ % V+-: bonds between neighbouring opposite-spin electrons
+ \onslide<3->{%
+ \foreach \x in {0,4.5} \draw[repel,cVpm] ({\x+0.22},{\yt+0.42})--({\x+0.53},{\yt+0.42});
+ \node[cVpm,anchor=west] at (7.4,{\yt-0.52}) {$V_{+-}$: \textbf{saves}};}
+ % hopping: two separate bands, up filled higher than down
+ \onslide<4->{%
+ \node[cT,anchor=west] at (7.4,{\yt-0.99}) {$t$: \textbf{costs}};
+ \foreach \xc/\f/\lab in {2.6/0.5/{$\uparrow$},4.2/0.22/{$\downarrow$}} {
+   \draw[mygray,thick,domain=-0.6:0.6,samples=30] plot (\xc+\x,{1.45+1.6*\x*\x});
+   \draw[cT,line width=2.4pt,domain=-\f:\f,samples=20] plot (\xc+\x,{1.45+1.6*\x*\x});
+   \draw[cT,densely dotted] (\xc-0.6,{1.45+1.6*\f*\f})--(\xc+0.6,{1.45+1.6*\f*\f});
+   \node at (\xc,1.2) {\lab};}
+ \node[cT,anchor=north] at (3.4,1.0) {$t$: $\uparrow$ electrons fill higher levels};}
+\end{tikzpicture}\par
+\end{frame}
+% Notes: Two copies of the same chain with the same number of electrons: on top the spins are mixed, <S^z> = 0; below, magnetized: mostly up.
+% Notes: Step 1: U: two up electrons cannot share a site, so magnetizing removes the doubly occupied site: saves on-site repulsion.
+% Notes: Step 2: V++: neighbouring same-spin electrons: the magnetized chain has more of them: costs.
+% Notes: Step 3: V+-: neighbouring opposite-spin electrons: the magnetized chain has fewer: saves. This is why a large Delta V = V+- - V++ favours a ferromagnet.
+% Notes: Step 4: Hopping: the up and down electrons fill separate bands; magnetizing fills the up band to higher levels while the down band empties lower (Pauli): kinetic energy costs.
 
 
 \begin{frame}[t]

@@ -59,7 +59,8 @@ Page numbers below: PDF pages (main text p1–7, supplement p8–22 = S1–S15).
 - Luttinger parameters (perturbative): K_{c/s} = (1 ± Ua/πv_F + 2a(V++ ± V+-)/πv_F)^{-1/2}.
   Identification: φ = φs/√(2π), θ = √(2π) θs, λ2 = (2π/K_s)². (p4)
 - Bosonization: c_{i↑} ∼ e^{i(k_F x + √(π/2)(φc+φs+θc+θs))}.
-  S^+_i ∼ e^{-i√(2π)θs}[cos √(2π)φc + cos(√(2π)φc + 2k_F x)] → charge LL attached → only QLRO
+  S^+_i ∼ e^{-i√(2π)θs}[cos √(2π)φs + cos(√(2π)φc + 2k_F x)] (Eq. 24, checked on rendered p4,
+  2026-11-24; the 2k_F part carries φc) → charge LL attached → only QLRO
   even at the QCP, decays ∼ |x|^{-K_c} (Fig. 2, p5). In a pure spin model S^+ would show LRO.
 - Order parameter: O_i = S^+_i S^+_{i+1} ∼ e^{-i√(8π)θs} = e^{-2iθ}: |β| = 2 phase vertex, spin-2,
   breaks U(1) → Z2: spin-nematic. LL phase: ⟨O†O⟩ ∼ |x|^{-4/K_s}; K_s diverges at the QCP.
@@ -132,6 +133,23 @@ All crops are 400-dpi PNGs of the arXiv PDF.
   terms": Landau E(m) curves (LL parabola, QCP quartic, FM double well) → Lifshitz L.
   The microscopic origin of the "..." terms (band curvature → m^4, interaction range →
   (∂x m)^2) is my physical reading, not stated in the paper: user to confirm.
+
+- 2026-11-24: big restructure with the user.
+  - Slide 5 rebuilt: the per-spin dictionary c_σ ∼ Σ_r e^{irk_F x}e^{i√π(rφ_σ+θ_σ)}, the
+    densities, and a staircase cartoon (φ_c counts electrons, φ_s counts spin).
+  - New slide 3, "What each term does to magnetization": two chains, ⟨Sᶻ⟩=0 vs magnetized,
+    with U/V++/V+- marked and an ↑/↓ band inset for t. The old Fermi-sea arrow implied
+    spin-flip hopping and is gone; t is same-spin.
+  - New slide 6, "Small ΔV: an ordinary Luttinger liquid": H_c+H_s, Fig. S4
+    (figures/paper_figS4_LL.png), K_{c/s} in term colours, no K_s→∞ there.
+  - Slide 7, "Near ΔV_c: beyond the Luttinger liquid": K_s^{-2}→0, the same H_s with
+    underbraces (→0, next terms κ(∂²φ_s)²+λ(∂φ_s)⁴), an ω∝k vs k² inset, \tk "z=2 Lifshitz
+    theory".
+  - The Landau-curves slide is dropped.
+  - The large-N slide moved to backup. Flow after 7: why e^{iθ} orders (slide-1 integral
+    redone at z=2) → which operator (S⁺ fails through the charge LL, nematic O) → true LRO →
+    stretched exponential (large-N result only flashed) → conclusion.
+  - No \tk by default. Builder lessons loop in ~/.claude/skills/beamer-talk/builder_lessons.md.
 
 ## Timing plan (≈ 10 min)
 MW 1:00 · FM loophole 1:15 · Taylor/Lifshitz 1:15 · lattice model 1:00 · order parameter 0:45 ·

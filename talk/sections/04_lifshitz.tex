@@ -1,47 +1,122 @@
-% ============================================================
-% 4  Near the transition: keep more terms -> Lifshitz theory
-% ============================================================
 \begin{frame}[t]
-\ft{Near the transition: keep more terms}\par
-\vspace{0.3cm}
+\ft{Near $\Delta V_c$: beyond the Luttinger liquid}\par
+\vspace{0.4cm}
+\begin{columns}[c]
+\begin{column}{0.56\textwidth}
 \centering
-% energy of a uniform magnetization m on the three sides of the transition (Landau picture)
-\begin{tikzpicture}[font=\footnotesize,
-  ax/.style={-{Stealth[length=3pt]},gray},
-  curve/.style={line width=1.6pt,domain=-1.25:1.25,samples=60}]
- \foreach \xo/\c/\a/\b/\top/\bot/\st in
-   {0/cLL/0.9/0.25/{small $\Delta V$}/{cost $\propto m^2/K_s$}/1,
-    3.75/cQCP/0/0.8/{$\Delta V_c$}/{only $m^4$ left}/2,
-    7.5/cFM/-1.0/0.6/{large $\Delta V$}/{$\langle m\rangle\neq0$}/3} {
-   \onslide<\st->{%
-   \begin{scope}[xshift=\xo cm]
-   \fill[\c!10,rounded corners=4pt] (-1.55,-0.75) rectangle (1.55,1.45);
-   \draw[ax] (-1.4,0)--(1.45,0) node[right,font=\scriptsize]{$m$};
-   \draw[ax] (0,-0.6)--(0,1.3) node[left,font=\scriptsize]{$E$};
-   \begin{scope} \clip (-1.55,-0.75) rectangle (1.55,1.25);
-   \draw[\c,curve] plot (\x,{\a*\x*\x+\b*\x*\x*\x*\x}); \end{scope}
-   \node[\c,font=\small\bfseries] at (0,1.7) {\top};
-   \node at (0,-1.0) {\bot};
-   \end{scope}}}
-\end{tikzpicture}\par
-\vspace{0.3cm}
+{\small$\displaystyle K_s^{-2}=1-\dfrac{{\color{cU}U}+2\,{\color{cVpm}\Delta V}}{\pi{\color{cT}v_F}}\;\to\;0$\par}
+\vspace{0.15cm}
+{\footnotesize magnetizing costs nothing: \colorbox{pumpkin!40}{\mystrut $K_s\to\infty$}\par}
+\end{column}
+\begin{column}{0.42\textwidth}
+\centering
+\onslide<2->{%
+\begin{tikzpicture}[font=\scriptsize]
+ \draw[-{Stealth[length=3pt]},mygray] (0,0)--(2.4,0) node[right]{$k$};
+ \draw[-{Stealth[length=3pt]},mygray] (0,0)--(0,1.9) node[above]{$\omega$};
+ \draw[cLL,thick] (0,0)--(1.9,1.52);
+ \node[cLL,anchor=south east] at (1.0,0.95) {Luttinger liquid};
+ \onslide<3->{%
+ \draw[cQCP,thick,domain=0:2.0,samples=30] plot (\x,{0.3*\x*\x});
+ \node[cQCP,anchor=west] at (2.05,1.2) {critical point};}
+\end{tikzpicture}}
+\end{column}
+\end{columns}
+\vspace{0.7cm}
+\centering
+\onslide<2->{%
+{\small$\displaystyle H_s=\frac{v_s}{2}\int\!\dd x\,\Big[K_s(\partial_x\theta_s)^2+\underbrace{\frac{1}{K_s}(\partial_x\phi_s)^2}_{\to\,0}\uncover<3->{{}+\underbrace{\colorbox{orchid!25}{$\mystrut\kappa\,(\partial_x^2\phi_s)^2+\lambda\,(\partial_x\phi_s)^4$}}_{\text{next terms}}}\Big]$\par}}
+\vspace{0.8cm}
 \onslide<4->{%
-{\small$\displaystyle
-\mathcal L = i\,\partial_x\theta\,\partial_\tau\phi + \tfrac12(\partial_x\theta)^2
-+ \underbrace{\colorbox{cLL!20}{$\mystrut\tfrac{\lambda_2}{2}(\partial_x\phi)^2$}}_{\text{\scriptsize\color{cLL} Luttinger liquid}}
-+ \underbrace{\colorbox{cQCP!15}{$\mystrut\tfrac12(\partial_x^2\phi)^2 + \tfrac{\lambda_4}{4}(\partial_x\phi)^4$}}_{\text{\scriptsize\color{cQCP} next terms}}
-+ \dots$\par}
-\vspace{0.05cm}
-{\scriptsize $\phi=\phi_s/\sqrt{2\pi}$,\ \ $\partial_x\phi\propto m$,\qquad $\lambda_2=(2\pi/K_s)^2\to0$ at $\Delta V_c$\par}}
-\vspace{0.2cm}
-\onslide<5->{%
-{\small At $\Delta V_c$: \colorbox{orchid!25}{\mystrut Lifshitz theory}, $\omega\propto k^2$ ($z\approx2$): not slide 1's $\omega^2+k^2$\par}
-\vspace{0.05cm}
-{\small $\lambda_4$ relevant: \colorbox{pumpkin!40}{\mystrut interacting}, non-conformal critical point\par}
-\vspace{0.1cm}
-{\tiny\color{citegray} K.~Yang, PRL 93, 066401 (2004);\; A.~Nahum, arXiv:2506.21540 (2025);\; R.~Flores-Calder\'on, M.~Z\"undel, arXiv:2511.09097 (2025)\par}}
-\onslide<5->{\tk{At the transition the Luttinger term vanishes: the next terms take over}}
+{\small $\lambda$ relevant: \colorbox{citron!40}{\mystrut interacting}, no exact solution\par}}
+\vspace{0.15cm}
+\onslide<3->{{\tiny\color{citegray} K.~Yang, PRL 93, 066401 (2004);\; A.~Nahum, arXiv:2506.21540 (2025)\par}}
+\onslide<3->{\tk{$z=2$ Lifshitz theory}}
 \end{frame}
-% Notes: Steps 1-3: The energy of a uniform magnetization m, Landau style. Small Delta V (Luttinger liquid): a parabola, the m^2 term (its coefficient ~1/K_s) is all we need: that is the Luttinger liquid, the first term of a Taylor expansion. At Delta V_c the m^2 coefficient vanishes (K_s -> infinity): the curve is flat at the bottom, only m^4 holds it. Beyond: a double well, the ferromagnet with <m> != 0.
-% Notes: Step 4: In fields (paper's normalization, phi = phi_s / sqrt(2 pi), d_x phi ~ m): the Luttinger liquid keeps only lambda_2 (d_x phi)^2 with lambda_2 = (2 pi / K_s)^2. At the transition we must keep the next terms: (d_x^2 phi)^2 (gradient cost of the magnetization) and (d_x phi)^4 (the m^4 of the Landau curve).
-% Notes: Step 5: This is the Lifshitz theory (K. Yang for this model; Nahum). Its quadratic part gives omega ~ k^2: z = 2 instead of 1, so the omega^2 + k^2 of slide 1 no longer holds: Mermin-Wagner's log divergence is gone. The quartic term is relevant: an interacting, non-conformal critical point; z = 2 - 2 eps^2/243 ~ 1.99 (Flores-Calderon & Zundel), consistent with numerics (Chepiga & Essler).
+% Notes: Step 1: Approaching Delta V_c, U and Delta V make magnetizing cheaper and cheaper; K_s^{-2} hits zero at a finite coupling.
+% Notes: Step 2: In the spin Hamiltonian the (d phi_s)^2/K_s term is exactly the cost of a magnetization, since S^z is proportional to d phi_s, and it vanishes. v_s K_s stays finite while v_s/K_s goes to 0, so spin waves slow down.
+% Notes: Step 3: So the next terms in the expansion take over: the curvature (d^2 phi_s)^2 and the quartic (d phi_s)^4. The quadratic part now gives omega ~ k^2: dynamical exponent z = 2, a Lifshitz theory (K. Yang for this model; Nahum).
+% Notes: Step 4: The quartic term is relevant: a strongly interacting critical point with no exact solution. No exact solution; but the quadratic part plus an exact argument already tell us what happens to theta (next slide).
+
+
+\begin{frame}[t]
+\ft{Why $e^{i\theta}$ should order}\par
+\vspace{0.2cm}
+\begin{columns}[c]
+\begin{column}{0.30\textwidth}
+\centering
+% top view of the xy plane: one in-plane spin, and its rotated copy
+\begin{tikzpicture}[font=\scriptsize,scale=0.85]
+ \draw[-{Stealth[length=5pt]},very thick,cLL] (0,0)--(30:1.15);
+ \draw[-{Stealth[length=5pt]},thick,densely dashed,cLL!60] (0,0)--(85:1.15);
+ \draw[cLL,-{Stealth[length=3pt]}] (30:0.55) arc (30:85:0.55);
+ \node[cLL] at (57:0.8) {$\alpha$};
+ \fill[mygray] (0,0) circle (0.04);
+ \draw[mygray] (0.45,0)--(1.3,0);
+ \node[cLL,anchor=north west] at (0.4,-0.05) {$\theta$};
+\end{tikzpicture}\par
+\end{column}
+\begin{column}{0.68\textwidth}
+{\small $\theta$: \colorbox{citron!40}{\mystrut direction of the spin} in the $xy$ plane\par}
+{\scriptsize $\theta=\sqrt{2\pi}\,\theta_s$\par}
+\vspace{0.15cm}
+{\small U(1): rotate all spins about $z$:\ \ $\theta\to\theta+\alpha$\par}
+\end{column}
+\end{columns}
+\vspace{0.05cm}
+\centering
+{\small order $=$ \colorbox{citron!40}{\mystrut aligned at any distance}:\ \ $\langle e^{i\theta_x}e^{-i\theta_0}\rangle\to$ const\par}
+\vspace{0.1cm}
+\onslide<2->{%
+\begin{columns}[T]
+\begin{column}{0.48\textwidth}
+\centering
+\colorbox{cLL!20}{\parbox{4.75cm}{\centering\footnotesize
+ \textbf{Luttinger liquid}\\[1pt]
+ \begin{tikzpicture}[x=0.4cm]
+  \useasboundingbox (-0.2,-0.15) rectangle (10.8,0.5);
+  \foreach \i in {0,...,10} {
+    \pgfmathsetmacro{\a}{40+55*sin(24*\i)}
+    \fill[mygray] (\i,0) circle (0.04);
+    \draw[-{Stealth[length=4pt,width=3.5pt]},thick,cLL] (\i,0) -- ++(\a:0.45);
+  }
+ \end{tikzpicture}\\[1pt]
+ $\langle(\theta_x-\theta_0)^2\rangle$\\[1pt]
+ \parbox[c][1.0cm][c]{\linewidth}{\centering
+ $\displaystyle\propto\int\!\dd k\,\dd\omega\,\frac{1-\cos kx}{\omega^2+k^2}$\\[2pt]
+ $\displaystyle\sim\ln|x|$}\\[2pt]
+ \textbf{no order}\mystrut}}
+\end{column}
+\begin{column}{0.48\textwidth}
+\centering
+\colorbox{cQCP!15}{\parbox{4.75cm}{\centering\footnotesize
+ \textbf{critical point}\\[1pt]
+ \begin{tikzpicture}[x=0.4cm]
+  \useasboundingbox (-0.2,-0.15) rectangle (10.8,0.5);
+  \foreach \i in {0,...,10} {
+    \pgfmathsetmacro{\a}{40+10*sin(70*\i+20)}
+    \fill[mygray] (\i,0) circle (0.04);
+    \draw[-{Stealth[length=4pt,width=3.5pt]},thick,cLL] (\i,0) -- ++(\a:0.45);
+  }
+ \end{tikzpicture}\\[1pt]
+ $\langle(\theta_x-\theta_0)^2\rangle$\\[1pt]
+ \parbox[c][1.0cm][c]{\linewidth}{\centering
+ \only<-2>{$\displaystyle\propto\int\!\dd k\,\dd\omega\,\frac{k^2(1-\cos kx)}{\omega^2+k^4}$}%
+ \only<3->{$\displaystyle=\int\!\dd k\,\frac{1-\cos kx}{2}$\\[2pt]\textbf{finite}}}\\[2pt]
+ \onslide<3->{\textbf{order}}\mystrut}}
+\end{column}
+\end{columns}}
+\vspace{0.1cm}
+\onslide<3->{{\footnotesize magnetization $S^z\propto\partial_x\phi_s$ is conjugate to $\theta$: free to fluctuate at $\Delta V_c$\par}}
+\vspace{0.1cm}
+\onslide<4->{%
+{\footnotesize\colorbox{citron!40}{\mystrut beyond Gaussian}:\ \ $[\rho]=\tfrac{3-z}{2}$, but an unbroken U(1) needs $[\rho]=1$\\[2pt]
+ $\Rightarrow$\ $z\neq1$ forces U(1) breaking\par}
+\vspace{0.05cm}
+{\tiny\color{citegray} M.~P.~A.~Fisher, G.~Grinstein, S.~M.~Girvin, PRL 64, 587 (1990);\; X.-G.~Wen, PRB 46, 2655 (1992);\; S.~Sachdev, Z.~Phys.~B 94, 469 (1994)\par}}
+\onslide<3->{\tk{Soft magnetization $\Rightarrow$ stiff spin direction}}
+\end{frame}
+% Notes: Step 1: theta is the direction of the spin in the xy plane. The U(1) symmetry rotates all spins about z, theta -> theta + alpha. Order means the direction is locked across the chain: this is the e^{i theta} of slide 1.
+% Notes: Step 2: Does it stay locked? In the Luttinger liquid the arrows wander logarithmically (slide 1). At the critical point the propagator is k^2/(omega^2 + k^4): the omega integral kills the 1/k.
+% Notes: Step 3: At Delta V_c the magnetization, theta's conjugate, costs nothing, so theta is stiff and the integral is finite: e^{i theta} orders, Mermin-Wagner is evaded.
+% Notes: Step 4: Exact version for experts: a conserved density has dimension 1 only if z = 1; for z != 1 an unbroken U(1) is impossible.
