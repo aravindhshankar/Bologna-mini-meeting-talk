@@ -63,3 +63,12 @@ mistake never comes back. One line per lesson, with the date and a short example
 
 ## Take-away lines
 - No \tk by default. Only add one when the spec asks for it. (2026-11-24.)
+
+## Self-review scope
+- View EVERY overlay step you render, not only the first and last. (2026-11-25.)
+- Text under a heading (e.g. "rotates under U(1)" under a candidate) is centred under that
+  heading; two side-by-side candidates sit in two equal columns. (2026-11-25.)
+- Sibling tiles carry the same rows in the same order (θ line, then φ line in both). (2026-11-25.)
+- No empty band above the \tk: spread the content vertically. (2026-11-25.)
+- A small sketch that floats in a corner, away from what it explains, is worse than no sketch:
+  drop it. (2026-11-25.)

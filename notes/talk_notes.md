@@ -58,7 +58,8 @@ Page numbers below: PDF pages (main text p1–7, supplement p8–22 = S1–S15).
   (ΔV=3.0) (Fig. S4, p18).
 - Luttinger parameters (perturbative): K_{c/s} = (1 ± Ua/πv_F + 2a(V++ ± V+-)/πv_F)^{-1/2}.
   Identification: φ = φs/√(2π), θ = √(2π) θs, λ2 = (2π/K_s)². (p4)
-- Bosonization: c_{i↑} ∼ e^{i(k_F x + √(π/2)(φc+φs+θc+θs))}.
+- Bosonization: c_{i↑} ∼ e^{i(k_F x + √(π/2)(φc+φs+θc+θs))} (Eq. 23, right mover only;
+  checked on rendered p4, 2026-11-25).
   S^+_i ∼ e^{-i√(2π)θs}[cos √(2π)φs + cos(√(2π)φc + 2k_F x)] (Eq. 24, checked on rendered p4,
   2026-11-24; the 2k_F part carries φc) → charge LL attached → only QLRO
   even at the QCP, decays ∼ |x|^{-K_c} (Fig. 2, p5). In a pure spin model S^+ would show LRO.
@@ -168,5 +169,13 @@ LRO 1:00 · large N 1:15 · Green's fn 0:45 · conclusion 1:00 · thanks 0:15.
 ## Open items
 - (resolved 2026-11-23) K_s sign: with the correct ΔV = V+- − V++,
   K_s^{-2} = 1 − (U + 2ΔV)/πv_F → K_s diverges at finite ΔV, consistent with the paper.
-- Collaborator photos for talk/ragazzi/ (andriyakhina.jpg, senthil.jpg, shi.jpg).
+- (resolved 2026-11-25) Collaborator photos in talk/ragazzi/.
 - Meeting name/date for the title block (currently "Bologna mini-meeting 2026").
+
+- 2026-11-25: slide 8 rebuilt as "What operator orders?" → (step 4) "e^{iθ} orders, breaking U(1)":
+  e^{iθ} = angle in the xy plane vs e^{2πiφ} magnetization, conjugate pair [φ,∂θ]=iδ;
+  LL tile (|x|^{-1/K_s}, |x|^{-K_s}) vs critical tile (K_s→∞: θ orders, φ faster than any
+  power); step 4 every charge β orders; step 5 large-N φ vertex e^{-C|x|^{2/3}}. The z=2
+  integral moved to backup ("The z=2 integral"); the z≠1 / [ρ] step dropped.
+  Thank-you slide retitled "Thank you for your attention", collaborator photos in
+  talk/ragazzi/ (lisa.jpeg, Senthil.jpeg, DariusShi.jpg).

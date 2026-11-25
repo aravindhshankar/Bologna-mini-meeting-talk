@@ -40,83 +40,95 @@
 
 
 \begin{frame}[t]
-\ft{Why $e^{i\theta}$ should order}\par
-\vspace{0.2cm}
-\begin{columns}[c]
-\begin{column}{0.30\textwidth}
-\centering
-% top view of the xy plane: one in-plane spin, and its rotated copy
-\begin{tikzpicture}[font=\scriptsize,scale=0.85]
- \draw[-{Stealth[length=5pt]},very thick,cLL] (0,0)--(30:1.15);
- \draw[-{Stealth[length=5pt]},thick,densely dashed,cLL!60] (0,0)--(85:1.15);
- \draw[cLL,-{Stealth[length=3pt]}] (30:0.55) arc (30:85:0.55);
- \node[cLL] at (57:0.8) {$\alpha$};
- \fill[mygray] (0,0) circle (0.04);
- \draw[mygray] (0.45,0)--(1.3,0);
- \node[cLL,anchor=north west] at (0.4,-0.05) {$\theta$};
-\end{tikzpicture}\par
-\end{column}
-\begin{column}{0.68\textwidth}
-{\small $\theta$: \colorbox{citron!40}{\mystrut direction of the spin} in the $xy$ plane\par}
-{\scriptsize $\theta=\sqrt{2\pi}\,\theta_s$\par}
+\ft{\only<-3>{What operator orders?}\only<4->{$e^{i\theta}$ orders, breaking U(1)}}\par
 \vspace{0.15cm}
-{\small U(1): rotate all spins about $z$:\ \ $\theta\to\theta+\alpha$\par}
-\end{column}
-\end{columns}
-\vspace{0.05cm}
-\centering
-{\small order $=$ \colorbox{citron!40}{\mystrut aligned at any distance}:\ \ $\langle e^{i\theta_x}e^{-i\theta_0}\rangle\to$ const\par}
-\vspace{0.1cm}
-\onslide<2->{%
 \begin{columns}[T]
 \begin{column}{0.48\textwidth}
 \centering
-\colorbox{cLL!20}{\parbox{4.75cm}{\centering\footnotesize
- \textbf{Luttinger liquid}\\[1pt]
- \begin{tikzpicture}[x=0.4cm]
-  \useasboundingbox (-0.2,-0.15) rectangle (10.8,0.5);
-  \foreach \i in {0,...,10} {
-    \pgfmathsetmacro{\a}{40+55*sin(24*\i)}
-    \fill[mygray] (\i,0) circle (0.04);
-    \draw[-{Stealth[length=4pt,width=3.5pt]},thick,cLL] (\i,0) -- ++(\a:0.45);
-  }
- \end{tikzpicture}\\[1pt]
- $\langle(\theta_x-\theta_0)^2\rangle$\\[1pt]
- \parbox[c][1.0cm][c]{\linewidth}{\centering
- $\displaystyle\propto\int\!\dd k\,\dd\omega\,\frac{1-\cos kx}{\omega^2+k^2}$\\[2pt]
- $\displaystyle\sim\ln|x|$}\\[2pt]
- \textbf{no order}\mystrut}}
+\parbox[c][1.1cm][c]{1.2cm}{\centering
+\begin{tikzpicture}[font=\scriptsize,scale=0.6]
+ \draw[mygray] (-0.2,0)--(1.5,0);
+ \draw[-{Stealth[length=4pt]},very thick,cLL] (0,0)--(35:1.4);
+ \draw[cLL] (0.8,0) arc (0:35:0.8);
+ \node[cLL] at (17:1.1) {$\theta$};
+ \node[mygray,anchor=west] at (1.5,0) {$x$};
+ \node[mygray,anchor=south] at (0,1.2) {$y$};
+\end{tikzpicture}}\hspace{0.1cm}\parbox[c][1.1cm][c]{3.7cm}{\centering
+{\small {\color{cLL}$e^{i\theta}$}: \colorbox{citron!40}{\mystrut angle in the $xy$ plane}\par}
+\vspace{2pt}
+{\footnotesize U(1): $\theta\to\theta+\alpha$\par}}
 \end{column}
 \begin{column}{0.48\textwidth}
 \centering
-\colorbox{cQCP!15}{\parbox{4.75cm}{\centering\footnotesize
- \textbf{critical point}\\[1pt]
- \begin{tikzpicture}[x=0.4cm]
-  \useasboundingbox (-0.2,-0.15) rectangle (10.8,0.5);
-  \foreach \i in {0,...,10} {
-    \pgfmathsetmacro{\a}{40+10*sin(70*\i+20)}
-    \fill[mygray] (\i,0) circle (0.04);
-    \draw[-{Stealth[length=4pt,width=3.5pt]},thick,cLL] (\i,0) -- ++(\a:0.45);
-  }
- \end{tikzpicture}\\[1pt]
- $\langle(\theta_x-\theta_0)^2\rangle$\\[1pt]
- \parbox[c][1.0cm][c]{\linewidth}{\centering
- \only<-2>{$\displaystyle\propto\int\!\dd k\,\dd\omega\,\frac{k^2(1-\cos kx)}{\omega^2+k^4}$}%
- \only<3->{$\displaystyle=\int\!\dd k\,\frac{1-\cos kx}{2}$\\[2pt]\textbf{finite}}}\\[2pt]
- \onslide<3->{\textbf{order}}\mystrut}}
+\parbox[c][1.1cm][c]{\linewidth}{\centering
+{\small {\color{orchid}$e^{2\pi i\phi}$}: \colorbox{citron!40}{\mystrut magnetization}\par}
+\vspace{2pt}
+{\footnotesize $S^z=\partial_x\phi$\par}}
 \end{column}
-\end{columns}}
+\end{columns}
+\vspace{0.15cm}
+\centering
+{\small $[\,{\color{orchid}\phi}(x),\partial_y{\color{cLL}\theta}(y)]=i\delta(x-y)$:\ \ \colorbox{citron!40}{\mystrut conjugate}, pin one, the other fluctuates\par}
+\vspace{0.12cm}
+\begin{columns}[T]
+\begin{column}{0.48\textwidth}
+\centering
+\onslide<2->{%
+\scalebox{0.85}{\colorbox{cLL!20}{\parbox[c][3.5cm][c]{4.75cm}{\centering\footnotesize
+ \textbf{Luttinger liquid}\\[3pt]
+ \begin{tikzpicture}[x=0.38cm,y=0.38cm]
+  \useasboundingbox (-1.3,-0.3) rectangle (10.4,1.4);
+  \node[cLL,left] at (-0.2,0.5) {$\theta$};
+  \foreach \i in {0,...,10} {
+    \pgfmathsetmacro{\a}{70+28*sin(35*\i)}
+    \fill[mygray] (\i,0) circle (0.1);
+    \draw[-{Stealth[length=4pt,width=3.5pt]},thick,cLL] (\i,0.1) -- ++(\a:1.0);
+  }
+ \end{tikzpicture}\\[2pt]
+ \begin{tikzpicture}[x=0.38cm,y=0.38cm]
+  \useasboundingbox (-1.3,-1.1) rectangle (10.4,1.1);
+  \node[orchid,left] at (-0.2,0) {$S^z$};
+  \draw[mygray] (0,0)--(10,0);
+  \draw[orchid,thick,samples=200,domain=0:10] plot (\x,{0.5*sin(36*\x)+0.3*sin(81*\x+30)});
+ \end{tikzpicture}\\[2pt]
+ {\color{cLL}$\theta$}: $|x|^{-1/K_s}$\mystrut\\[2pt]
+ {\color{orchid}$\phi$}: $|x|^{-K_s}$\mystrut}}}}
+\end{column}
+\begin{column}{0.48\textwidth}
+\centering
+\onslide<3->{%
+\scalebox{0.85}{\colorbox{cQCP!15}{\parbox[c][3.5cm][c]{4.75cm}{\centering\footnotesize
+ \textbf{critical point, $K_s\to\infty$}\\[3pt]
+ \begin{tikzpicture}[x=0.38cm,y=0.38cm]
+  \useasboundingbox (-1.3,-0.3) rectangle (10.4,1.4);
+  \node[cLL,left] at (-0.2,0.5) {$\theta$};
+  \foreach \i in {0,...,10} {
+    \pgfmathsetmacro{\a}{70+6*sin(70*\i+20)}
+    \fill[mygray] (\i,0) circle (0.1);
+    \draw[-{Stealth[length=4pt,width=3.5pt]},thick,cLL] (\i,0.1) -- ++(\a:1.0);
+  }
+ \end{tikzpicture}\\[2pt]
+ \begin{tikzpicture}[x=0.38cm,y=0.38cm]
+  \useasboundingbox (-1.3,-1.1) rectangle (10.4,1.1);
+  \node[orchid,left] at (-0.2,0) {$S^z$};
+  \draw[mygray] (0,0)--(10,0);
+  \draw[orchid,thick,samples=200,domain=0:10] plot (\x,{0.55*sin(170*\x)+0.5*sin(290*\x+40)+0.45*sin(410*\x+100)});
+ \end{tikzpicture}\\[2pt]
+ {\color{cLL}$\theta$}: $|x|^{0}$, \colorbox{citron!40}{\mystrut order}\\[2pt]
+ {\color{orchid}$\phi$}: faster than any power\mystrut}}}}
+\end{column}
+\end{columns}
 \vspace{0.1cm}
-\onslide<3->{{\footnotesize magnetization $S^z\propto\partial_x\phi_s$ is conjugate to $\theta$: free to fluctuate at $\Delta V_c$\par}}
-\vspace{0.1cm}
-\onslide<4->{%
-{\footnotesize\colorbox{citron!40}{\mystrut beyond Gaussian}:\ \ $[\rho]=\tfrac{3-z}{2}$, but an unbroken U(1) needs $[\rho]=1$\\[2pt]
- $\Rightarrow$\ $z\neq1$ forces U(1) breaking\par}
-\vspace{0.05cm}
-{\tiny\color{citegray} M.~P.~A.~Fisher, G.~Grinstein, S.~M.~Girvin, PRL 64, 587 (1990);\; X.-G.~Wen, PRB 46, 2655 (1992);\; S.~Sachdev, Z.~Phys.~B 94, 469 (1994)\par}}
+\parbox[c][1.4cm][c]{\linewidth}{\centering\small
+\only<4>{$\theta$ fluctuations stay finite $\Rightarrow$\\[2pt]
+$\langle e^{i\beta\theta_x}e^{-i\beta\theta_0}\rangle=e^{-\beta^2\langle(\theta_x-\theta_0)^2\rangle/2}\to$ const:\ \colorbox{citron!40}{\mystrut long-range order for every charge $\beta$}\par}%
+\only<5>{magnetization vertex at the critical point:\\[2pt]
+$\langle e^{2\pi i\phi_x}e^{-2\pi i\phi_0}\rangle\sim e^{-C|x|^{2/3}}$\ \ \colorbox{citron!40}{\mystrut stretched exponential}\ \ (large $N$)\\[3pt]
+{\tiny\color{citegray} E.~S.~Andriyakhina, A.~S.~Shankar, T.~Senthil, Z.~D.~Shi, arXiv:2609.38581 (2026)\par}}}
 \onslide<3->{\tk{Soft magnetization $\Rightarrow$ stiff spin direction}}
 \end{frame}
-% Notes: Step 1: theta is the direction of the spin in the xy plane. The U(1) symmetry rotates all spins about z, theta -> theta + alpha. Order means the direction is locked across the chain: this is the e^{i theta} of slide 1.
-% Notes: Step 2: Does it stay locked? In the Luttinger liquid the arrows wander logarithmically (slide 1). At the critical point the propagator is k^2/(omega^2 + k^4): the omega integral kills the 1/k.
-% Notes: Step 3: At Delta V_c the magnetization, theta's conjugate, costs nothing, so theta is stiff and the integral is finite: e^{i theta} orders, Mermin-Wagner is evaded.
-% Notes: Step 4: Exact version for experts: a conserved density has dimension 1 only if z = 1; for z != 1 an unbroken U(1) is impossible.
+% Notes: Step 1: Two candidate order parameters. e^{i theta} is only the in-plane angle of the spin (xy projection); the U(1) rotates theta -> theta + alpha. e^{2 pi i phi} is the magnetization (S^z = d_x phi), neutral under U(1). They are conjugate: pinning one makes the other fluctuate.
+% Notes: Step 2: Luttinger liquid: theta wanders, correlator decays as |x|^{-1/K_s}, a power law, no order; the magnetization profile fluctuates mildly, phi vertex decays as |x|^{-K_s}.
+% Notes: Step 3: At Delta V_c, K_s -> infinity: the theta exponent goes to zero, so e^{i theta} orders. The magnetization is free to fluctuate wildly (phi vertex decays faster than any power), which is exactly what the conjugate pair allows.
+% Notes: Step 4: Gaussian fluctuations of theta stay finite, so every charge beta orders: long-range order, U(1) broken, Mermin-Wagner evaded.
+% Notes: Step 5: The magnetization vertex at the critical point is a stretched exponential exp(-C |x|^{2/3}) from the large-N theory (co-authors' work, arXiv:2609.38581).
