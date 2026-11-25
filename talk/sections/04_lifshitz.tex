@@ -24,19 +24,23 @@
 \end{columns}
 \vspace{0.7cm}
 \centering
-\onslide<2->{%
-{\small$\displaystyle H_s=\frac{v_s}{2}\int\!\dd x\,\Big[K_s(\partial_x\theta_s)^2+\underbrace{\frac{1}{K_s}(\partial_x\phi_s)^2}_{\to\,0}\uncover<3->{{}+\underbrace{\colorbox{orchid!25}{$\mystrut\kappa\,(\partial_x^2\phi_s)^2+\lambda\,(\partial_x\phi_s)^4$}}_{\text{next terms}}}\Big]$\par}}
-\vspace{0.8cm}
+\parbox[c][1.3cm][c]{\linewidth}{\centering
+\only<-4>{\onslide<2->{%
+{\small$\displaystyle H_s=\frac{v_s}{2}\int\!\dd x\,\Big[K_s(\partial_x\theta_s)^2+\underbrace{\frac{1}{K_s}(\partial_x\phi_s)^2}_{\to\,0}\uncover<3->{{}+\underbrace{\colorbox{orchid!25}{$\mystrut\kappa\,(\partial_x^2\phi_s)^2+\lambda\,(\partial_x\phi_s)^4$}}_{\text{next terms}}}\Big]$\par}}}%
+\only<5>{{\small$\displaystyle \mathcal{L}=i\,\partial_x\bm\theta\cdot\partial_\tau\bm\phi+\tfrac12(\partial_x\bm\theta)^2+\tfrac{\lambda_2}{2}(\partial_x\bm\phi)^2+\colorbox{orchid!25}{$\mystrut\tfrac12(\partial_x^2\bm\phi)^2+\tfrac{\lambda_4}{4N}\big[(\partial_x\bm\phi)^2\big]^2$}$\par}}}
+\vspace{0.4cm}
 \onslide<4->{%
-{\small $\lambda$ relevant: \colorbox{citron!40}{\mystrut interacting}, no exact solution\par}}
+{\small $\lambda$ relevant: \colorbox{citron!40}{\mystrut interacting}, no exact solution%
+\only<5>{;\ \ $N$-component $\bm\theta,\bm\phi$: \colorbox{citron!40}{\mystrut large $N$} is tractable}\par}}
 \vspace{0.15cm}
-\onslide<3->{{\tiny\color{citegray} K.~Yang, PRL 93, 066401 (2004);\; A.~Nahum, arXiv:2506.21540 (2025)\par}}
+\onslide<3->{{\tiny\color{citegray} K.~Yang, PRL 93, 066401 (2004);\; A.~Nahum, arXiv:2506.21540 (2025)\only<5>{;\; E.~S.~Andriyakhina \emph{et al.}, arXiv:2609.38581 (2026)}\par}}
 \onslide<3->{\tk{$z=2$ Lifshitz theory}}
 \end{frame}
 % Notes: Step 1: Approaching Delta V_c, U and Delta V make magnetizing cheaper and cheaper; K_s^{-2} hits zero at a finite coupling.
 % Notes: Step 2: In the spin Hamiltonian the (d phi_s)^2/K_s term is exactly the cost of a magnetization, since S^z is proportional to d phi_s, and it vanishes. v_s K_s stays finite while v_s/K_s goes to 0, so spin waves slow down.
 % Notes: Step 3: So the next terms in the expansion take over: the curvature (d^2 phi_s)^2 and the quartic (d phi_s)^4. The quadratic part now gives omega ~ k^2: dynamical exponent z = 2, a Lifshitz theory (K. Yang for this model; Nahum).
 % Notes: Step 4: The quartic term is relevant: a strongly interacting critical point with no exact solution. No exact solution; but the quadratic part plus an exact argument already tell us what happens to theta (next slide).
+% Notes: Step 5: To get numbers anyway, promote theta and phi to N-component vectors (Berry term i d_x theta . d_tau phi, quartic lambda_4/4N [(d_x phi)^2]^2, paper Eqs. 4-5): at large N the critical point is a controlled saddle. That is where the stretched exponential comes from later.
 
 
 \begin{frame}[t]

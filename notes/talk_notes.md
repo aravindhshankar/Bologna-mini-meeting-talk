@@ -179,3 +179,5 @@ LRO 1:00 · large N 1:15 · Green's fn 0:45 · conclusion 1:00 · thanks 0:15.
   integral moved to backup ("The z=2 integral"); the z≠1 / [ρ] step dropped.
   Thank-you slide retitled "Thank you for your attention", collaborator photos in
   talk/ragazzi/ (lisa.jpeg, Senthil.jpeg, DariusShi.jpg).
+- 2026-11-25: slide 7 step 5: H_s animates into the large-N Lagrangian (paper Eqs. 4–5, checked on
+  rendered p3) with "N-component θ, φ: large N is tractable".
