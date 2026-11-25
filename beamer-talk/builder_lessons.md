@@ -55,5 +55,11 @@ mistake never comes back. One line per lesson, with the date and a short example
   have. (2026-11-24: an arrow from the ↓ band to the ↑ band beside "hopping t" read as
   spin-flip hopping, but t is same-spin hopping.)
 
+- Changing one step of a cumulative curve (a staircase) changes only what lies AFTER it.
+  Check that the part before the change is unchanged in the render. (2026-11-25: flipping
+  one tanh sign also shifted φ_s to the LEFT of the flipped spin.)
+- A small but key feature (a jump of √(2π)) must be big enough to see: scale that curve's
+  step height up rather than leave a 3 mm arrow. (2026-11-25.)
+
 ## Take-away lines
 - No \tk by default. Only add one when the spec asks for it. (2026-11-24.)

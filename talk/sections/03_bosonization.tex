@@ -43,23 +43,33 @@
 \onslide<4->{%
 \centering
 \begin{tikzpicture}[font=\scriptsize]
- \def\h{0.14}\def\w{0.07}
+ \def\h{0.14}\def\hs{0.2}\def\w{0.07}
  \def\bc{0.95}\def\bs{-0.95}
  \draw[mygray,thick] (0,0)--(9.4,0);
  \foreach \x in {1.0,2.1,3.0,4.3,5.4,6.6,7.5,8.8} \draw[mygray,densely dotted] (\x,-1.1)--(\x,{\bc+8*\h+0.05});
- \foreach \x/\p in {1.0/eup,2.1/edn,3.0/eup,4.3/eup,5.4/edn,6.6/eup,7.5/edn,8.8/edn} \path (\x,0) pic {\p};
+ \only<5->{\fill[citron!40,rounded corners=3pt] (5.1,-0.4) rectangle (5.7,0.43);}
+ \foreach \x/\p in {1.0/eup,2.1/edn,3.0/eup,4.3/eup,6.6/eup,7.5/edn,8.8/edn} \path (\x,0) pic {\p};
+ \only<-4>{\path (5.4,0) pic {edn};}\only<5->{\path (5.4,0) pic {eup};}
+ \path (0,{\bs-0.25}) (0,{\bs+0.65});
  \draw[cLL,thick,samples=240,domain=0.7:9.2] plot (\x,{\bc+\h*(0.5*(8+\st{\x-1.0}+\st{\x-2.1}+\st{\x-3.0}+\st{\x-4.3}+\st{\x-5.4}+\st{\x-6.6}+\st{\x-7.5}+\st{\x-8.8})-4)});
- \draw[orchid,thick,samples=240,domain=0.7:9.2] plot (\x,{\bs+\h*0.5*(\st{\x-1.0}-\st{\x-2.1}+\st{\x-3.0}+\st{\x-4.3}-\st{\x-5.4}+\st{\x-6.6}-\st{\x-7.5}-\st{\x-8.8})});
+ \only<4>{\draw[orchid,thick,samples=240,domain=0.7:9.2] plot (\x,{\bs+\hs*0.5*(\st{\x-1.0}-\st{\x-2.1}+\st{\x-3.0}+\st{\x-4.3}-\st{\x-5.4}+\st{\x-6.6}-\st{\x-7.5}-\st{\x-8.8})});}
+ \only<5->{\draw[orchid!35,thick,densely dashed,samples=240,domain=0.7:9.2] plot (\x,{\bs+\hs*0.5*(\st{\x-1.0}-\st{\x-2.1}+\st{\x-3.0}+\st{\x-4.3}-\st{\x-5.4}+\st{\x-6.6}-\st{\x-7.5}-\st{\x-8.8})});
+ \draw[orchid,thick,samples=240,domain=0.7:9.2] plot (\x,{\bs+\hs+\hs*0.5*(\st{\x-1.0}-\st{\x-2.1}+\st{\x-3.0}+\st{\x-4.3}+\st{\x-5.4}+\st{\x-6.6}-\st{\x-7.5}-\st{\x-8.8})});
+ \draw[orchid,{Stealth[length=3pt]}-{Stealth[length=3pt]}] (9.1,\bs) -- (9.1,{\bs+2*\hs});
+ \node[orchid,anchor=west,inner sep=1pt] at (9.25,{\bs+1.6*\hs}) {$\sqrt{2\pi}$};}
  \node[cLL,anchor=east] at (0.65,{\bc-4*\h}) {$\phi_c$};
  \node[orchid,anchor=east] at (0.65,\bs) {$\phi_s$};
  \node[cLL,anchor=west] at (9.25,{\bc+4*\h}) {steps $\sqrt{\pi/2}$};
- \node[orchid,anchor=west] at (9.25,\bs) {steps $\pm\sqrt{\pi/2}$};
-\end{tikzpicture}\par}
-\onslide<4->{\tk{$\phi_c$ counts electrons, $\phi_s$ counts their spin}}
+ \node[orchid,anchor=west] at (9.25,{\bs-0.12}) {steps $\pm\sqrt{\pi/2}$};
+\end{tikzpicture}\par
+}
+\only<-4>{\onslide<4->{\tk{$\phi_c$ counts electrons, $\phi_s$ counts their spin}}}%
+\only<5->{\tk{\colorbox{citron!40}{\mystrut spin flip}:\ \ $S^+\sim e^{-i\sqrt{2\pi}\theta_s}$ raises $\phi_s$ by $\sqrt{2\pi}$}}
 \end{frame}
 % Notes: Step 1: Hopping gives a band; we fill it up to k_F (quarter filling per spin: k_F = pi/4). At low energy only electrons near the two Fermi points matter; there the band is a straight line: right and left movers with speed v_F.
 % Notes: Step 2: Each electron is a vertex operator of two bosons: phi (density) and theta (its conjugate phase); charge and spin fields are the sum and difference of up and down.
 % Notes: Step 3: The densities are slopes: the charge density is d_x phi_c, the magnetization S^z is d_x phi_s.
+% Notes: Step 5: theta_s is conjugate to phi_s, so its vertex shifts phi_s: e^{-i sqrt(2pi) theta_s} raises the total S^z by one, i.e. flips one spin; to the right of that point phi_s jumps by sqrt(2 pi). This is why the theta vertex is the U(1)-charged object: later, S^+ and the nematic O = S^+S^+.
 % Notes: Step 4: phi_c counts electrons: it steps up by the same amount at every electron, whatever its spin. phi_s goes up at each up spin and down at each down spin.
 
 
