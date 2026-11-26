@@ -7,37 +7,37 @@
 \centering
 % one long chain; each term of H shown where it acts, tinted in its colour
 \begin{tikzpicture}[font=\footnotesize,every pic/.style={scale=1.25}]
- % chain, fading out at both ends (sites 0..9, 1 cm apart)
+ % chain of sites (0..9, 1 cm apart), fading out at both ends; electrons sit on the sites
  \draw[gray,thick] (-0.3,0)--(9.3,0);
  \draw[gray,thick,densely dotted] (-0.9,0)--(-0.3,0) (9.3,0)--(9.9,0);
- \foreach \i in {0,...,9} \fill[gray] (\i,0) circle (0.055);
+ \foreach \i in {0,...,9} \pic at (\i,0) {site};
  % hopping t: site 0 -> 1
  \onslide<1->{%
- \fill[cT!15,rounded corners=5pt] (-0.5,-0.4) rectangle (1.5,1.55);
- \pic at (0,0.42) {eup}; \pic at (1,0.42) {eghost};
- \draw[-{Stealth[length=6pt]},line width=1.3pt,cT] (0.15,0.95) to[bend left=50] (0.85,0.95);
- \node[cT,font=\small] at (0.5,1.38) {$t$};
- \node[cT] at (0.5,-0.68) {hopping};}
- % on-site U: site 3
+ \begin{scope}[on background layer]\fill[cT!15,rounded corners=5pt] (-0.5,-0.45) rectangle (1.5,1.2);\end{scope}
+ \pic at (0,0) {eup}; \pic at (1,0) {eghost};
+ \draw[-{Stealth[length=6pt]},line width=1.3pt,cT] (0.15,0.5) to[bend left=50] (0.85,0.5);
+ \node[cT,font=\small] at (0.5,0.95) {$t$};
+ \node[cT] at (0.5,-0.72) {hopping};}
+ % on-site U: two electrons on site 3
  \onslide<2->{%
- \fill[cU!15,rounded corners=5pt] (2.45,-0.4) rectangle (3.55,1.55);
- \pic at (2.76,0.42) {eup}; \pic at (3.24,0.42) {edn};
- \node[cU,font=\small] at (3,1.2) {$U$};
- \node[cU] at (3,-0.68) {on-site};}
+ \begin{scope}[on background layer]\fill[cU!15,rounded corners=5pt] (2.45,-0.45) rectangle (3.55,1.2);\end{scope}
+ \pic[scale=0.75] at (2.85,0) {eup}; \pic[scale=0.75] at (3.15,0) {edn};
+ \node[cU,font=\small] at (3,0.85) {$U$};
+ \node[cU] at (3,-0.72) {on-site};}
  % same-spin neighbours V++: sites 5,6
  \onslide<3->{%
- \fill[cVpp!15,rounded corners=5pt] (4.5,-0.4) rectangle (6.5,1.55);
- \pic at (5,0.42) {eup}; \pic at (6,0.42) {eup};
- \draw[repel,cVpp] (5.3,0.42)--(5.7,0.42);
- \node[cVpp,font=\small] at (5.5,1.2) {$V_{++}$};
- \node[cVpp] at (5.5,-0.68) {same spin};}
+ \begin{scope}[on background layer]\fill[cVpp!15,rounded corners=5pt] (4.5,-0.45) rectangle (6.5,1.2);\end{scope}
+ \pic at (5,0) {eup}; \pic at (6,0) {eup};
+ \draw[repel,cVpp] (5.3,0)--(5.7,0);
+ \node[cVpp,font=\small] at (5.5,0.85) {$V_{++}$};
+ \node[cVpp] at (5.5,-0.72) {same spin};}
  % opposite-spin neighbours V+-: sites 8,9
  \onslide<4->{%
- \fill[cVpm!15,rounded corners=5pt] (7.5,-0.4) rectangle (9.5,1.55);
- \pic at (8,0.42) {eup}; \pic at (9,0.42) {edn};
- \draw[repel,cVpm] (8.3,0.42)--(8.7,0.42);
- \node[cVpm,font=\small] at (8.5,1.2) {$V_{+-}$};
- \node[cVpm] at (8.5,-0.68) {opposite spin};}
+ \begin{scope}[on background layer]\fill[cVpm!15,rounded corners=5pt] (7.5,-0.45) rectangle (9.5,1.2);\end{scope}
+ \pic at (8,0) {eup}; \pic at (9,0) {edn};
+ \draw[repel,cVpm] (8.3,0)--(8.7,0);
+ \node[cVpm,font=\small] at (8.5,0.85) {$V_{+-}$};
+ \node[cVpm] at (8.5,-0.72) {opposite spin};}
 \end{tikzpicture}\par
 \vspace{0.6cm}
 {\small$H=$\
@@ -66,27 +66,28 @@
  \def\yt{4.7}\def\yb{2.8}
  \foreach \yc in {\yt,\yb} {
    \draw[gray,thick] (-0.35,\yc)--(7.1,\yc);
-   \foreach \i in {0,...,9} \fill[gray] ({0.75*\i},\yc) circle (0.055);}
- \node[anchor=east] at (-0.5,{\yt+0.42}) {$\langle S^z\rangle=0$};
- \node[anchor=east] at (-0.5,{\yb+0.42}) {magnetized};
+   \foreach \i in {0,...,9} \pic at ({0.75*\i},\yc) {site};}
+ \node[anchor=east] at (-0.5,\yt) {$\langle S^z\rangle=0$};
+ \node[anchor=east] at (-0.5,\yb) {magnetized};
  % U: doubly occupied sites
  \onslide<1->{%
- \fill[cU!25,rounded corners=5pt] (1.65,{\yt-0.2}) rectangle (2.85,{\yt+1.05});
- \node[cU,anchor=west] at (7.4,{\yt+0.17}) {$U$: \textbf{saves}};}
+ \begin{scope}[on background layer]\fill[cU!25,rounded corners=5pt] (1.85,{\yt-0.5}) rectangle (2.65,{\yt+0.6});\end{scope}
+ \node[cU,anchor=west] at (7.4,{\yt-0.25}) {$U$: \textbf{saves}};}
  % electrons: top = mixed spins with one doubly occupied site; bottom = mostly up, no double site
- \foreach \x/\p in {0/eup,0.75/edn,2.01/eup,2.49/edn,4.5/edn,5.25/eup} \path (\x,{\yt+0.42}) pic {\p};
- \foreach \x/\p in {0/eup,0.75/eup,1.5/eup,3/eup,3.75/eup,6/edn} \path (\x,{\yb+0.42}) pic {\p};
+ \foreach \x/\p in {0/eup,0.75/edn,4.5/edn,5.25/eup} \path (\x,\yt) pic {\p};
+ \pic[scale=0.75] at (2.11,\yt) {eup}; \pic[scale=0.75] at (2.39,\yt) {edn};
+ \foreach \x/\p in {0/eup,0.75/eup,1.5/eup,3/eup,3.75/eup,6/edn} \path (\x,\yb) pic {\p};
  % V++: bonds between neighbouring same-spin electrons
  \onslide<2->{%
- \foreach \x in {0,0.75,3} \draw[repel,cVpp] ({\x+0.22},{\yb+0.42})--({\x+0.53},{\yb+0.42});
- \node[cVpp,anchor=west] at (7.4,{\yt-0.30}) {$V_{++}$: \textbf{costs}};}
+ \foreach \x in {0,0.75,3} \draw[repel,cVpp] ({\x+0.22},\yb)--({\x+0.53},\yb);
+ \node[cVpp,anchor=west] at (7.4,{\yt-0.72}) {$V_{++}$: \textbf{costs}};}
  % V+-: bonds between neighbouring opposite-spin electrons
  \onslide<3->{%
- \foreach \x in {0,4.5} \draw[repel,cVpm] ({\x+0.22},{\yt+0.42})--({\x+0.53},{\yt+0.42});
- \node[cVpm,anchor=west] at (7.4,{\yt-0.77}) {$V_{+-}$: \textbf{saves}};}
+ \foreach \x in {0,4.5} \draw[repel,cVpm] ({\x+0.22},\yt)--({\x+0.53},\yt);
+ \node[cVpm,anchor=west] at (7.4,{\yt-1.19}) {$V_{+-}$: \textbf{saves}};}
  % hopping: two separate bands, up filled higher than down
  \onslide<4->{%
- \node[cT,anchor=west] at (7.4,{\yt-1.24}) {$t$: \textbf{costs}};
+ \node[cT,anchor=west] at (7.4,{\yt-1.66}) {$t$: \textbf{costs}};
  \foreach \xc/\f/\lab in {2.6/0.5/{$\uparrow$},4.2/0.22/{$\downarrow$}} {
    \draw[mygray,thick,domain=-0.6:0.6,samples=30] plot (\xc+\x,{1.45+1.6*\x*\x});
    \draw[cT,line width=2.4pt,domain=-\f:\f,samples=20] plot (\xc+\x,{1.45+1.6*\x*\x});
@@ -111,23 +112,23 @@
 {\footnotesize symmetry: spin rotations about $z$ \colorbox{citron!40}{\mystrut U(1)},\ \ $\uparrow\leftrightarrow\downarrow$ ($\mathbb Z_2$)\par}
 \vspace{0.6cm}
 \begin{tikzpicture}[font=\footnotesize]
- \fill[cLL!10,rounded corners=4pt] (-0.3,-0.3) rectangle (5.8,0.85);
+ \fill[cLL!10,rounded corners=4pt] (-0.3,-0.4) rectangle (5.8,0.4);
  \draw[mygray,thick] (-0.15,0)--(5.65,0);
  \foreach \s [count=\i from 0] in {1,0,-1,1,0,0,-1,0,1,-1,0,-1} {
-   \fill[mygray] (0.5*\i,0) circle (0.045);
-   \ifnum\s=1 \pic at (0.5*\i,0.33) {eup}; \fi
-   \ifnum\s=-1 \pic at (0.5*\i,0.33) {edn}; \fi }
- \node[cLL,anchor=south west] at (-0.3,0.85) {\textbf{small $\Delta V$}: Luttinger liquid, $\langle S^z\rangle=0$};
+   \pic[scale=0.8] at (0.5*\i,0) {site};
+   \ifnum\s=1 \pic[scale=0.8] at (0.5*\i,0) {eup}; \fi
+   \ifnum\s=-1 \pic[scale=0.8] at (0.5*\i,0) {edn}; \fi }
+ \node[cLL,anchor=south west] at (-0.3,0.4) {\textbf{small $\Delta V$}: Luttinger liquid, $\langle S^z\rangle=0$};
  \onslide<2->{%
- \draw[-{Stealth[length=5pt]},thick,mygraydark] (2.75,-0.4)--(2.75,-1.0) node[midway,right,font=\scriptsize]{increase $\Delta V$};
- \begin{scope}[yshift=-1.75cm]
- \fill[cFM!10,rounded corners=4pt] (-0.3,-0.3) rectangle (5.8,0.85);
+ \draw[-{Stealth[length=5pt]},thick,mygraydark] (2.75,-0.5)--(2.75,-1.0) node[midway,right,font=\scriptsize]{increase $\Delta V$};
+ \begin{scope}[yshift=-1.5cm]
+ \fill[cFM!10,rounded corners=4pt] (-0.3,-0.4) rectangle (5.8,0.4);
  \draw[mygray,thick] (-0.15,0)--(5.65,0);
  \foreach \s [count=\i from 0] in {1,0,1,1,0,1,0,1,-1,0,1,1} {
-   \fill[mygray] (0.5*\i,0) circle (0.045);
-   \ifnum\s=1 \pic at (0.5*\i,0.33) {eup}; \fi
-   \ifnum\s=-1 \pic at (0.5*\i,0.33) {edn}; \fi }
- \node[cFM,anchor=north west] at (-0.3,-0.3) {\textbf{large $\Delta V$}: ferromagnet, $\langle S^z\rangle\neq0$};
+   \pic[scale=0.8] at (0.5*\i,0) {site};
+   \ifnum\s=1 \pic[scale=0.8] at (0.5*\i,0) {eup}; \fi
+   \ifnum\s=-1 \pic[scale=0.8] at (0.5*\i,0) {edn}; \fi }
+ \node[cFM,anchor=north west] at (-0.3,-0.4) {\textbf{large $\Delta V$}: ferromagnet, $\langle S^z\rangle\neq0$};
  \end{scope}}
 \end{tikzpicture}\par
 \end{column}

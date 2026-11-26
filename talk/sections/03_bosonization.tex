@@ -46,15 +46,16 @@
  \def\h{0.14}\def\hs{0.2}\def\w{0.07}
  \def\bc{0.95}\def\bs{-0.95}
  \draw[mygray,thick] (0,0)--(9.4,0);
- \foreach \x in {1.0,2.1,3.0,4.3,5.4,6.6,7.5,8.8} \draw[mygray,densely dotted] (\x,-1.1)--(\x,{\bc+8*\h+0.05});
- \only<5->{\fill[citron!40,rounded corners=3pt] (5.1,-0.4) rectangle (5.7,0.43);}
- \foreach \x/\p in {1.0/eup,2.1/edn,3.0/eup,4.3/eup,6.6/eup,7.5/edn,8.8/edn} \path (\x,0) pic {\p};
- \only<-4>{\path (5.4,0) pic {edn};}\only<5->{\path (5.4,0) pic {eup};}
+ \foreach \i in {0,...,13} \pic[scale=0.9] at ({1.0+0.6*\i},0) {site};
+ \begin{scope}[on background layer]\foreach \x in {1.0,2.2,2.8,4.6,5.2,6.4,7.6,8.8} \draw[mygray,densely dotted] (\x,-1.1)--(\x,{\bc+8*\h+0.05});\end{scope}
+ \only<5->{\begin{scope}[on background layer]\fill[citron!40,rounded corners=3pt] (4.9,-0.4) rectangle (5.5,0.43);\end{scope}}
+ \foreach \x/\p in {1.0/eup,2.2/edn,2.8/eup,4.6/eup,6.4/eup,7.6/edn,8.8/edn} \path (\x,0) pic {\p};
+ \only<-4>{\path (5.2,0) pic {edn};}\only<5->{\path (5.2,0) pic {eup};}
  \path (0,{\bs-0.25}) (0,{\bs+0.65});
- \draw[cLL,thick,samples=240,domain=0.7:9.2] plot (\x,{\bc+\h*(0.5*(8+\st{\x-1.0}+\st{\x-2.1}+\st{\x-3.0}+\st{\x-4.3}+\st{\x-5.4}+\st{\x-6.6}+\st{\x-7.5}+\st{\x-8.8})-4)});
- \only<4>{\draw[orchid,thick,samples=240,domain=0.7:9.2] plot (\x,{\bs+\hs*0.5*(\st{\x-1.0}-\st{\x-2.1}+\st{\x-3.0}+\st{\x-4.3}-\st{\x-5.4}+\st{\x-6.6}-\st{\x-7.5}-\st{\x-8.8})});}
- \only<5->{\draw[orchid!35,thick,densely dashed,samples=240,domain=0.7:9.2] plot (\x,{\bs+\hs*0.5*(\st{\x-1.0}-\st{\x-2.1}+\st{\x-3.0}+\st{\x-4.3}-\st{\x-5.4}+\st{\x-6.6}-\st{\x-7.5}-\st{\x-8.8})});
- \draw[orchid,thick,samples=240,domain=0.7:9.2] plot (\x,{\bs+\hs+\hs*0.5*(\st{\x-1.0}-\st{\x-2.1}+\st{\x-3.0}+\st{\x-4.3}+\st{\x-5.4}+\st{\x-6.6}-\st{\x-7.5}-\st{\x-8.8})});
+ \draw[cLL,thick,samples=240,domain=0.7:9.2] plot (\x,{\bc+\h*(0.5*(8+\st{\x-1.0}+\st{\x-2.2}+\st{\x-2.8}+\st{\x-4.6}+\st{\x-5.2}+\st{\x-6.4}+\st{\x-7.6}+\st{\x-8.8})-4)});
+ \only<4>{\draw[orchid,thick,samples=240,domain=0.7:9.2] plot (\x,{\bs+\hs*0.5*(\st{\x-1.0}-\st{\x-2.2}+\st{\x-2.8}+\st{\x-4.6}-\st{\x-5.2}+\st{\x-6.4}-\st{\x-7.6}-\st{\x-8.8})});}
+ \only<5->{\draw[orchid!35,thick,densely dashed,samples=240,domain=0.7:9.2] plot (\x,{\bs+\hs*0.5*(\st{\x-1.0}-\st{\x-2.2}+\st{\x-2.8}+\st{\x-4.6}-\st{\x-5.2}+\st{\x-6.4}-\st{\x-7.6}-\st{\x-8.8})});
+ \draw[orchid,thick,samples=240,domain=0.7:9.2] plot (\x,{\bs+\hs+\hs*0.5*(\st{\x-1.0}-\st{\x-2.2}+\st{\x-2.8}+\st{\x-4.6}+\st{\x-5.2}+\st{\x-6.4}-\st{\x-7.6}-\st{\x-8.8})});
  \draw[orchid,{Stealth[length=3pt]}-{Stealth[length=3pt]}] (9.1,\bs) -- (9.1,{\bs+2*\hs});
  \node[orchid,anchor=west,inner sep=1pt] at (9.25,{\bs+1.6*\hs}) {$\sqrt{2\pi}$};}
  \node[cLL,anchor=east] at (0.65,{\bc-4*\h}) {$\phi_c$};

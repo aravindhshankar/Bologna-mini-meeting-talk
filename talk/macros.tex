@@ -33,16 +33,17 @@
 
 % Hamiltonian term colours (pictures, H and the K formulas use the same colour per term)
 \colorlet{cT}{spinach}                % hopping t
-\colorlet{cU}{pumpkin!85!black}       % on-site U
-\colorlet{cVpp}{citron!75!black}      % same-spin neighbours V_{++}
+\colorlet{cU}{pumpkin!55!lava}          % on-site U
+\colorlet{cVpp}{citron!65!darkspinach}      % same-spin neighbours V_{++}
 \colorlet{cVpm}{orchid}               % opposite-spin neighbours V_{+-} (wins -> ferromagnet)
 
-% electrons: glossy blue balls with a spin arrow; eghost = where an electron hops to
+% electrons: glossy blue balls with a spin arrow; site = lattice site they sit on; eghost = where an electron hops to
 \tikzset{
  eup/.pic={\shade[ball color=blue!45!cyan] (0,0) circle (0.16);
            \draw[-{Stealth[length=4pt,width=4.5pt]},line width=1.3pt,black] (0,-0.27)--(0,0.31);},
  edn/.pic={\shade[ball color=blue!45!cyan] (0,0) circle (0.16);
            \draw[-{Stealth[length=4pt,width=4.5pt]},line width=1.3pt,black] (0,0.27)--(0,-0.31);},
+ site/.pic={\fill[gray!22] (0,0) circle (0.25); \draw[gray!60,thin] (0,0) circle (0.25);},
  eghost/.pic={\draw[densely dashed,blue!45!cyan,thick] (0,0) circle (0.16);},
  repel/.style={decorate,decoration={zigzag,amplitude=1.4pt,segment length=3.2pt},line width=1.1pt},
 }

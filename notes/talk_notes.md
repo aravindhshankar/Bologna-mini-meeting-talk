@@ -190,3 +190,9 @@ LRO 1:00 · large N 1:15 · Green's fn 0:45 · conclusion 1:00 · thanks 0:15.
 - 2026-11-26: audience test DONE, critique in `audiencepoll.md` (repo root). Next: fix the obvious mistakes, list the
   serious points for the user to decide on. Fixed: slide 3 labels centred between rows, Fig. S6
   cited on slide 4. Not real bugs: p32 "]" closes H_s, p38→39 is a new slide. Rest open for user.
+- 2026-11-26: slides 2–3 chains redrawn (user): sites are grey discs on the chain (`site` pic in macros),
+  electrons sit ON them (doubly occupied = two smaller balls on one disc); term boxes on the
+  background layer so the chain shows through.
+- 2026-11-26: slide 4 and bosonization chains also on site discs (bosonization electrons moved onto a
+  regular 0.6 lattice). Term colours (user: U and V++ too close and faded): cU = pumpkin!55!lava
+  (burnt orange), cVpp = citron!65!darkspinach (olive green).
