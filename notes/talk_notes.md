@@ -198,3 +198,5 @@ LRO 1:00 · large N 1:15 · Green's fn 0:45 · conclusion 1:00 · thanks 0:15.
   (burnt orange), cVpp = citron!65!darkspinach (olive green).
 - 2026-11-26: slide 3 (user): t label and band inset removed (3 steps: U, V++, V+-); H at the bottom,
   the current step's term highlighted in its colour (\alt colorbox vs white box, no jump).
+- 2026-11-26: slide 8 boxes schematic (user): exponents |x|^{-1/K_s}, |x|^{-K_s}, no 2pi factors (normalisation
+  dropped on purpose; precise: 1/(2pi K_s), K_s/(2pi)).

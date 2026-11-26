@@ -84,8 +84,8 @@
     \draw[-{Stealth[length=4pt,width=3.5pt]},thick,cLL] (\i,0.1) -- ++(\a:1.0);
   }
  \end{tikzpicture}\\[6pt]
- {\color{cLL}$e^{i\theta_s}$}: $|x|^{-1/(2\pi K_s)}$\mystrut\\[4pt]
- {\color{orchid}$e^{i\phi_s}$}: $|x|^{-K_s/(2\pi)}$\mystrut}}}
+ {\color{cLL}$e^{i\theta_s}$}: $|x|^{-1/K_s}$\mystrut\\[4pt]
+ {\color{orchid}$e^{i\phi_s}$}: $|x|^{-K_s}$\mystrut}}}
 \end{column}
 \begin{column}{0.48\textwidth}
 \centering
@@ -101,7 +101,7 @@
     \draw[-{Stealth[length=4pt,width=3.5pt]},thick,cLL] (\i,0.1) -- ++(\a:1.0);
   }
  \end{tikzpicture}\\[6pt]
- {\color{cLL}$e^{i\theta_s}$}: $|x|^{-1/(2\pi K_s)}\to$ const, \colorbox{citron!40}{\mystrut order}\mystrut\\[4pt]
+ {\color{cLL}$e^{i\theta_s}$}: $|x|^{-1/K_s}\to$ const, \colorbox{citron!40}{\mystrut order}\mystrut\\[4pt]
  {\color{orchid}$e^{i\phi_s}$}: faster than any power\mystrut}}}
 \end{column}
 \end{columns}
@@ -113,6 +113,6 @@ $\langle e^{i\phi_s(x)}e^{-i\phi_s(0)}\rangle\sim e^{-C|x|^{2/3}}$\ \ \colorbox{
 \onslide<3->{\tk{Soft magnetization $\Rightarrow$ stiff spin direction}}
 \end{frame}
 % Notes: Step 1: e^{i theta} is the in-plane angle of the spin; U(1) rotates theta -> theta + alpha, so e^{i theta} picks up a phase: it is the order parameter. theta_s and phi_s are conjugate: pinning one makes the other fluctuate.
-% Notes: Step 2: Luttinger liquid: the arrows wander; e^{i theta_s} decays as |x|^{-1/(2 pi K_s)}, a power law, no order; e^{i phi_s} as |x|^{-K_s/(2 pi)}.
+% Notes: Step 2: Luttinger liquid: the arrows wander; e^{i theta_s} decays as |x|^{-1/K_s}, a power law, no order; e^{i phi_s} as |x|^{-K_s}.
 % Notes: Step 3: At Delta V_c, K_s -> infinity: the theta exponent goes to zero, so e^{i theta} orders and U(1) is broken (Mermin-Wagner evaded). The conjugate e^{i phi_s} decays faster than any power.
 % Notes: Step 4: Large-N result (co-authors' work, arXiv:2609.38581): the magnetization vertex at the critical point is a stretched exponential exp(-C |x|^{2/3}).
