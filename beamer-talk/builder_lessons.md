@@ -76,3 +76,4 @@ mistake never comes back. One line per lesson, with the date and a short example
   slide; a lone self-citation on a slide looks odd. (2026-11-26.)
 - Re-read the file before reworking it, and never re-add something Opus or the user removed
   since your last round (a citation came back on slide 8). (2026-11-26.)
+- 2026-11-26: labels that compare two rows (costs/saves going from row A to row B) sit centred between the rows, not level with one of them. Every borrowed figure gets its grey citation under it.

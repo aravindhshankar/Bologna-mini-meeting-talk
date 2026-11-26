@@ -186,3 +186,7 @@ LRO 1:00 · large N 1:15 · Green's fn 0:45 · conclusion 1:00 · thanks 0:15.
   no β step; 4 steps). Slide 9 retitled "Try to find a bare θ vertex as a lattice operator",
   rows centred. Own-paper citation moved from slide 9 to slide 10 (more important result);
   none on slides 8, 11. Slide 11 made crisp (figure + 3 items).
+
+- 2026-11-26: audience test DONE, critique in `audiencepoll.md` (repo root). Next: fix the obvious mistakes, list the
+  serious points for the user to decide on. Fixed: slide 3 labels centred between rows, Fig. S6
+  cited on slide 4. Not real bugs: p32 "]" closes H_s, p38→39 is a new slide. Rest open for user.
