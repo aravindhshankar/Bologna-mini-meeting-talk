@@ -196,3 +196,5 @@ LRO 1:00 · large N 1:15 · Green's fn 0:45 · conclusion 1:00 · thanks 0:15.
 - 2026-11-26: slide 4 and bosonization chains also on site discs (bosonization electrons moved onto a
   regular 0.6 lattice). Term colours (user: U and V++ too close and faded): cU = pumpkin!55!lava
   (burnt orange), cVpp = citron!65!darkspinach (olive green).
+- 2026-11-26: slide 3 (user): t label and band inset removed (3 steps: U, V++, V+-); H at the bottom,
+  the current step's term highlighted in its colour (\alt colorbox vs white box, no jump).

@@ -72,7 +72,7 @@
  % U: doubly occupied sites
  \onslide<1->{%
  \begin{scope}[on background layer]\fill[cU!25,rounded corners=5pt] (1.85,{\yt-0.5}) rectangle (2.65,{\yt+0.6});\end{scope}
- \node[cU,anchor=west] at (7.4,{\yt-0.25}) {$U$: \textbf{saves}};}
+ \node[cU,anchor=west] at (7.4,{\yt-0.48}) {$U$: \textbf{saves}};}
  % electrons: top = mixed spins with one doubly occupied site; bottom = mostly up, no double site
  \foreach \x/\p in {0/eup,0.75/edn,4.5/edn,5.25/eup} \path (\x,\yt) pic {\p};
  \pic[scale=0.75] at (2.11,\yt) {eup}; \pic[scale=0.75] at (2.39,\yt) {edn};
@@ -80,27 +80,25 @@
  % V++: bonds between neighbouring same-spin electrons
  \onslide<2->{%
  \foreach \x in {0,0.75,3} \draw[repel,cVpp] ({\x+0.22},\yb)--({\x+0.53},\yb);
- \node[cVpp,anchor=west] at (7.4,{\yt-0.72}) {$V_{++}$: \textbf{costs}};}
+ \node[cVpp,anchor=west] at (7.4,{\yt-0.95}) {$V_{++}$: \textbf{costs}};}
  % V+-: bonds between neighbouring opposite-spin electrons
  \onslide<3->{%
  \foreach \x in {0,4.5} \draw[repel,cVpm] ({\x+0.22},\yt)--({\x+0.53},\yt);
- \node[cVpm,anchor=west] at (7.4,{\yt-1.19}) {$V_{+-}$: \textbf{saves}};}
- % hopping: two separate bands, up filled higher than down
- \onslide<4->{%
- \node[cT,anchor=west] at (7.4,{\yt-1.66}) {$t$: \textbf{costs}};
- \foreach \xc/\f/\lab in {2.6/0.5/{$\uparrow$},4.2/0.22/{$\downarrow$}} {
-   \draw[mygray,thick,domain=-0.6:0.6,samples=30] plot (\xc+\x,{1.45+1.6*\x*\x});
-   \draw[cT,line width=2.4pt,domain=-\f:\f,samples=20] plot (\xc+\x,{1.45+1.6*\x*\x});
-   \draw[cT,densely dotted] (\xc-0.6,{1.45+1.6*\f*\f})--(\xc+0.6,{1.45+1.6*\f*\f});
-   \node at (\xc,1.2) {\lab};}
- \node[cT,anchor=north] at (3.4,1.0) {$t$: $\uparrow$ electrons fill higher levels};}
+ \node[cVpm,anchor=west] at (7.4,{\yt-1.42}) {$V_{+-}$: \textbf{saves}};}
 \end{tikzpicture}\par
+\vspace{1.2cm}
+% H as on slide 2; the term of the current step is highlighted in its colour (white box otherwise, so nothing moves)
+{\small$H=$\
+$-t\sum_{i\sigma}\big(c^\dagger_{i\sigma}c^{\phantom\dagger}_{i+1,\sigma}+\text{h.c.}\big)$
+$+$\,\alt<1>{\colorbox{cU!25}}{\colorbox{white}}{$\mystrut{\color{cU}U}\sum_i n_{i\uparrow}n_{i\downarrow}$}\\[5pt]
+$+$\,\alt<2>{\colorbox{cVpp!25}}{\colorbox{white}}{$\mystrut{\color{cVpp}V_{++}}\sum_{i\sigma}n_{i\sigma}n_{i+1,\sigma}$}
+$+$\,\alt<3>{\colorbox{cVpm!25}}{\colorbox{white}}{$\mystrut{\color{cVpm}V_{+-}}\sum_{i\sigma}n_{i\sigma}n_{i+1,\bar\sigma}$}\par}
 \end{frame}
 % Notes: Two copies of the same chain with the same number of electrons: on top the spins are mixed, <S^z> = 0; below, magnetized: mostly up.
 % Notes: Step 1: U: two up electrons cannot share a site, so magnetizing removes the doubly occupied site: saves on-site repulsion.
 % Notes: Step 2: V++: neighbouring same-spin electrons: the magnetized chain has more of them: costs.
 % Notes: Step 3: V+-: neighbouring opposite-spin electrons: the magnetized chain has fewer: saves. This is why a large Delta V = V+- - V++ favours a ferromagnet.
-% Notes: Step 4: Hopping: the up and down electrons fill separate bands; magnetizing fills the up band to higher levels while the down band empties lower (Pauli): kinetic energy costs.
+% Notes: H at the bottom: the term of each step is highlighted. (Hopping also costs: magnetizing fills the up band higher, Pauli; said, not drawn.)
 
 
 \begin{frame}[t]
