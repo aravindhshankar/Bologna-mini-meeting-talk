@@ -72,3 +72,7 @@ mistake never comes back. One line per lesson, with the date and a short example
 - No empty band above the \tk: spread the content vertically. (2026-11-25.)
 - A small sketch that floats in a corner, away from what it explains, is worse than no sketch:
   drop it. (2026-11-25.)
+- Cite the speaker's own paper once (on the first slide that borrows its figures), not on every
+  slide; a lone self-citation on a slide looks odd. (2026-11-26.)
+- Re-read the file before reworking it, and never re-add something Opus or the user removed
+  since your last round (a citation came back on slide 8). (2026-11-26.)

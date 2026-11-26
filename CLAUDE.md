@@ -44,8 +44,10 @@ arXiv:2609.38581 (`2609.38581.pdf`, public arXiv preprint).
 - Recurring categories and colours (`talk/macros.tex`): Luttinger liquid `cLL` (blue, = the
   ΔV=3.20 curve), critical point `cQCP` (red, = the ΔV=3.55 curve), ferromagnet `cFM`.
   Avoid tomato highlights on slides with the red QCP curve.
-- Ragazzi slide: collaborator photos go in `talk/ragazzi/` (`andriyakhina.jpg`, `senthil.jpg`,
-  `shi.jpg`); a grey placeholder box shows until the file exists.
+- Our own paper (arXiv:2609.38581): from slide 8 on, cite it once only (slide 9, under Fig. 2),
+  not on every slide; a lone self-citation looks odd (user, 2026-11-26). Earlier cites: slide 6
+  (Fig. S4), slide 7 (large-N step).
+- Thank-you slide: photos in `talk/ragazzi/` (`lisa.jpeg`, `Senthil.jpeg`, `DariusShi.jpg`).
 
 - Slide building (user, 2026-11-24): keep ONE Sonnet builder subagent alive for the session and
   resume it with SendMessage (it already has the skill loaded); don't spawn fresh ones. It

@@ -24,10 +24,10 @@
 \end{columns}
 \vspace{0.7cm}
 \centering
-\parbox[c][1.3cm][c]{\linewidth}{\centering
+\parbox[c][1.6cm][c]{\linewidth}{\centering
 \only<-4>{\onslide<2->{%
-{\small$\displaystyle H_s=\frac{v_s}{2}\int\!\dd x\,\Big[K_s(\partial_x\theta_s)^2+\underbrace{\frac{1}{K_s}(\partial_x\phi_s)^2}_{\to\,0}\uncover<3->{{}+\underbrace{\colorbox{orchid!25}{$\mystrut\kappa\,(\partial_x^2\phi_s)^2+\lambda\,(\partial_x\phi_s)^4$}}_{\text{next terms}}}\Big]$\par}}}%
-\only<5>{{\small$\displaystyle \mathcal{L}=i\,\partial_x\bm\theta\cdot\partial_\tau\bm\phi+\tfrac12(\partial_x\bm\theta)^2+\tfrac{\lambda_2}{2}(\partial_x\bm\phi)^2+\colorbox{orchid!25}{$\mystrut\tfrac12(\partial_x^2\bm\phi)^2+\tfrac{\lambda_4}{4N}\big[(\partial_x\bm\phi)^2\big]^2$}$\par}}}
+{\normalsize$\displaystyle H_s=\frac{v_s}{2}\int\!\dd x\,\Big[K_s(\partial_x\theta_s)^2+\underbrace{\frac{1}{K_s}(\partial_x\phi_s)^2}_{\to\,0}\uncover<3->{{}+\underbrace{\colorbox{orchid!25}{$\mystrut\kappa\,(\partial_x^2\phi_s)^2+\lambda\,(\partial_x\phi_s)^4$}}_{\text{next terms}}}\Big]$\par}}}%
+\only<5>{{\normalsize$\displaystyle \mathcal{L}=i\,\partial_x\bm\theta\cdot\partial_\tau\bm\phi+\frac12(\partial_x\bm\theta)^2+\frac{\lambda_2}{2}(\partial_x\bm\phi)^2+\colorbox{orchid!25}{$\displaystyle\frac12(\partial_x^2\bm\phi)^2+\frac{\lambda_4}{4N}\big[(\partial_x\bm\phi)^2\big]^2$}$\par}}}
 \vspace{0.4cm}
 \onslide<4->{%
 {\small $\lambda$ relevant: \colorbox{citron!40}{\mystrut interacting}, no exact solution%
@@ -45,94 +45,74 @@
 
 \begin{frame}[t]
 \ft{\only<-3>{What operator orders?}\only<4->{$e^{i\theta}$ orders, breaking U(1)}}\par
-\vspace{0.15cm}
-\begin{columns}[T]
-\begin{column}{0.48\textwidth}
+\vspace{0.3cm}
+\begin{columns}[c]
+\begin{column}{0.27\textwidth}
 \centering
-\parbox[c][1.1cm][c]{1.2cm}{\centering
-\begin{tikzpicture}[font=\scriptsize,scale=0.6]
- \draw[mygray] (-0.2,0)--(1.5,0);
- \draw[-{Stealth[length=4pt]},very thick,cLL] (0,0)--(35:1.4);
- \draw[cLL] (0.8,0) arc (0:35:0.8);
- \node[cLL] at (17:1.1) {$\theta$};
- \node[mygray,anchor=west] at (1.5,0) {$x$};
- \node[mygray,anchor=south] at (0,1.2) {$y$};
-\end{tikzpicture}}\hspace{0.1cm}\parbox[c][1.1cm][c]{3.7cm}{\centering
-{\small {\color{cLL}$e^{i\theta}$}: \colorbox{citron!40}{\mystrut angle in the $xy$ plane}\par}
-\vspace{2pt}
-{\footnotesize U(1): $\theta\to\theta+\alpha$\par}}
+\begin{tikzpicture}[font=\scriptsize,scale=0.85]
+ \draw[-{Stealth[length=5pt]},very thick,cLL] (0,0)--(30:1.3);
+ \draw[-{Stealth[length=5pt]},thick,densely dashed,cLL!60] (0,0)--(85:1.3);
+ \draw[cLL,-{Stealth[length=3pt]}] (30:0.6) arc (30:85:0.6);
+ \node[cLL] at (57:0.9) {$\alpha$};
+ \fill[mygray] (0,0) circle (0.04);
+ \draw[mygray] (0.45,0)--(1.5,0);
+ \node[cLL,anchor=north west] at (0.4,-0.05) {$\theta$};
+\end{tikzpicture}
 \end{column}
-\begin{column}{0.48\textwidth}
-\centering
-\parbox[c][1.1cm][c]{\linewidth}{\centering
-{\small {\color{orchid}$e^{2\pi i\phi}$}: \colorbox{citron!40}{\mystrut magnetization}\par}
-\vspace{2pt}
-{\footnotesize $S^z=\partial_x\phi$\par}}
+\begin{column}{0.71\textwidth}
+{\small U(1): $\theta\to\theta+\alpha$\par}
+\vspace{6pt}
+{\small $e^{i\theta}\to e^{i\alpha}e^{i\theta}$: \colorbox{citron!40}{\mystrut order parameter}\par}
 \end{column}
 \end{columns}
-\vspace{0.15cm}
+\vspace{0.3cm}
 \centering
-{\small $[\,{\color{orchid}\phi}(x),\partial_y{\color{cLL}\theta}(y)]=i\delta(x-y)$:\ \ \colorbox{citron!40}{\mystrut conjugate}, pin one, the other fluctuates\par}
-\vspace{0.12cm}
+{\small $[\,{\color{orchid}\phi_s}(x),\partial_y{\color{cLL}\theta_s}(y)]=i\delta(x-y)$:\ \ \colorbox{citron!40}{\mystrut conjugate}, pin one, the other fluctuates\par}
+\vspace{0.3cm}
 \begin{columns}[T]
 \begin{column}{0.48\textwidth}
 \centering
 \onslide<2->{%
-\scalebox{0.85}{\colorbox{cLL!20}{\parbox[c][3.5cm][c]{4.75cm}{\centering\footnotesize
- \textbf{Luttinger liquid}\\[3pt]
+\colorbox{cLL!20}{\parbox[c][2.5cm][c]{5.0cm}{\centering\footnotesize
+ \textbf{Luttinger liquid}\\[6pt]
  \begin{tikzpicture}[x=0.38cm,y=0.38cm]
-  \useasboundingbox (-1.3,-0.3) rectangle (10.4,1.4);
-  \node[cLL,left] at (-0.2,0.5) {$\theta$};
+  \useasboundingbox (-1.5,-0.3) rectangle (10.4,1.4);
+  \node[cLL,left] at (-0.2,0.5) {$\theta_s$};
   \foreach \i in {0,...,10} {
     \pgfmathsetmacro{\a}{70+28*sin(35*\i)}
     \fill[mygray] (\i,0) circle (0.1);
     \draw[-{Stealth[length=4pt,width=3.5pt]},thick,cLL] (\i,0.1) -- ++(\a:1.0);
   }
- \end{tikzpicture}\\[2pt]
- \begin{tikzpicture}[x=0.38cm,y=0.38cm]
-  \useasboundingbox (-1.3,-1.1) rectangle (10.4,1.1);
-  \node[orchid,left] at (-0.2,0) {$S^z$};
-  \draw[mygray] (0,0)--(10,0);
-  \draw[orchid,thick,samples=200,domain=0:10] plot (\x,{0.5*sin(36*\x)+0.3*sin(81*\x+30)});
- \end{tikzpicture}\\[2pt]
- {\color{cLL}$\theta$}: $|x|^{-1/K_s}$\mystrut\\[2pt]
- {\color{orchid}$\phi$}: $|x|^{-K_s}$\mystrut}}}}
+ \end{tikzpicture}\\[6pt]
+ {\color{cLL}$e^{i\theta_s}$}: $|x|^{-1/(2\pi K_s)}$\mystrut\\[4pt]
+ {\color{orchid}$e^{i\phi_s}$}: $|x|^{-K_s/(2\pi)}$\mystrut}}}
 \end{column}
 \begin{column}{0.48\textwidth}
 \centering
 \onslide<3->{%
-\scalebox{0.85}{\colorbox{cQCP!15}{\parbox[c][3.5cm][c]{4.75cm}{\centering\footnotesize
- \textbf{critical point, $K_s\to\infty$}\\[3pt]
+\colorbox{cQCP!15}{\parbox[c][2.5cm][c]{5.0cm}{\centering\footnotesize
+ \textbf{critical point, $K_s\to\infty$}\\[6pt]
  \begin{tikzpicture}[x=0.38cm,y=0.38cm]
-  \useasboundingbox (-1.3,-0.3) rectangle (10.4,1.4);
-  \node[cLL,left] at (-0.2,0.5) {$\theta$};
+  \useasboundingbox (-1.5,-0.3) rectangle (10.4,1.4);
+  \node[cLL,left] at (-0.2,0.5) {$\theta_s$};
   \foreach \i in {0,...,10} {
     \pgfmathsetmacro{\a}{70+6*sin(70*\i+20)}
     \fill[mygray] (\i,0) circle (0.1);
     \draw[-{Stealth[length=4pt,width=3.5pt]},thick,cLL] (\i,0.1) -- ++(\a:1.0);
   }
- \end{tikzpicture}\\[2pt]
- \begin{tikzpicture}[x=0.38cm,y=0.38cm]
-  \useasboundingbox (-1.3,-1.1) rectangle (10.4,1.1);
-  \node[orchid,left] at (-0.2,0) {$S^z$};
-  \draw[mygray] (0,0)--(10,0);
-  \draw[orchid,thick,samples=200,domain=0:10] plot (\x,{0.55*sin(170*\x)+0.5*sin(290*\x+40)+0.45*sin(410*\x+100)});
- \end{tikzpicture}\\[2pt]
- {\color{cLL}$\theta$}: $|x|^{0}$, \colorbox{citron!40}{\mystrut order}\\[2pt]
- {\color{orchid}$\phi$}: faster than any power\mystrut}}}}
+ \end{tikzpicture}\\[6pt]
+ {\color{cLL}$e^{i\theta_s}$}: $|x|^{-1/(2\pi K_s)}\to$ const, \colorbox{citron!40}{\mystrut order}\mystrut\\[4pt]
+ {\color{orchid}$e^{i\phi_s}$}: faster than any power\mystrut}}}
 \end{column}
 \end{columns}
-\vspace{0.1cm}
-\parbox[c][1.4cm][c]{\linewidth}{\centering\small
-\only<4>{$\theta$ fluctuations stay finite $\Rightarrow$\\[2pt]
-$\langle e^{i\beta\theta_x}e^{-i\beta\theta_0}\rangle=e^{-\beta^2\langle(\theta_x-\theta_0)^2\rangle/2}\to$ const:\ \colorbox{citron!40}{\mystrut long-range order for every charge $\beta$}\par}%
-\only<5>{magnetization vertex at the critical point:\\[2pt]
-$\langle e^{2\pi i\phi_x}e^{-2\pi i\phi_0}\rangle\sim e^{-C|x|^{2/3}}$\ \ \colorbox{citron!40}{\mystrut stretched exponential}\ \ (large $N$)\\[3pt]
-{\tiny\color{citegray} E.~S.~Andriyakhina, A.~S.~Shankar, T.~Senthil, Z.~D.~Shi, arXiv:2609.38581 (2026)\par}}}
+\vspace{0.3cm}
+\parbox[c][1.2cm][c]{\linewidth}{\centering\small
+\only<3>{$K_s\to\infty$: exponent $\to0$ $\Rightarrow$ \colorbox{citron!40}{\mystrut $e^{i\theta}$ orders}, U(1) broken\par}%
+\only<4>{magnetization vertex at the critical point:\\[2pt]
+$\langle e^{i\phi_s(x)}e^{-i\phi_s(0)}\rangle\sim e^{-C|x|^{2/3}}$\ \ \colorbox{citron!40}{\mystrut stretched exponential}\ \ (large $N$)}}
 \onslide<3->{\tk{Soft magnetization $\Rightarrow$ stiff spin direction}}
 \end{frame}
-% Notes: Step 1: Two candidate order parameters. e^{i theta} is only the in-plane angle of the spin (xy projection); the U(1) rotates theta -> theta + alpha. e^{2 pi i phi} is the magnetization (S^z = d_x phi), neutral under U(1). They are conjugate: pinning one makes the other fluctuate.
-% Notes: Step 2: Luttinger liquid: theta wanders, correlator decays as |x|^{-1/K_s}, a power law, no order; the magnetization profile fluctuates mildly, phi vertex decays as |x|^{-K_s}.
-% Notes: Step 3: At Delta V_c, K_s -> infinity: the theta exponent goes to zero, so e^{i theta} orders. The magnetization is free to fluctuate wildly (phi vertex decays faster than any power), which is exactly what the conjugate pair allows.
-% Notes: Step 4: Gaussian fluctuations of theta stay finite, so every charge beta orders: long-range order, U(1) broken, Mermin-Wagner evaded.
-% Notes: Step 5: The magnetization vertex at the critical point is a stretched exponential exp(-C |x|^{2/3}) from the large-N theory (co-authors' work, arXiv:2609.38581).
+% Notes: Step 1: e^{i theta} is the in-plane angle of the spin; U(1) rotates theta -> theta + alpha, so e^{i theta} picks up a phase: it is the order parameter. theta_s and phi_s are conjugate: pinning one makes the other fluctuate.
+% Notes: Step 2: Luttinger liquid: the arrows wander; e^{i theta_s} decays as |x|^{-1/(2 pi K_s)}, a power law, no order; e^{i phi_s} as |x|^{-K_s/(2 pi)}.
+% Notes: Step 3: At Delta V_c, K_s -> infinity: the theta exponent goes to zero, so e^{i theta} orders and U(1) is broken (Mermin-Wagner evaded). The conjugate e^{i phi_s} decays faster than any power.
+% Notes: Step 4: Large-N result (co-authors' work, arXiv:2609.38581): the magnetization vertex at the critical point is a stretched exponential exp(-C |x|^{2/3}).
