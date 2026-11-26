@@ -37,8 +37,8 @@ arXiv:2609.38581 (`2609.38581.pdf`, public arXiv preprint).
 - Colours: only the user's palette (orchid, pumpkin, citron, tomato, spinach, ... in
   preamble.tex). NO teal. NO gray boxes or panels: gray is reserved for the bottom \tk panel
   (user, 2026-11-23). Lattice drawings may use gray lines/dots.
-- Hamiltonian term colours (`talk/macros.tex`): hopping `cT`=spinach, on-site `cU`=pumpkin,
-  same-spin `cVpp`=citron, opposite-spin `cVpm`=orchid; pictures, H and the K formulas use
+- Hamiltonian term colours (`talk/macros.tex`): hopping `cT`=spinach, on-site `cU`=burnt orange (pumpkin+lava),
+  same-spin `cVpp`=olive (citron+darkspinach), opposite-spin `cVpm`=orchid; pictures, H and the K formulas use
   them. Electrons are TikZ pics `eup`/`edn` (glossy blue ball + spin arrow).
 - Lattice model facts: ΔV = V+- − V++ (V++ fixed); FM when opposite-spin repulsion wins.
 - Recurring categories and colours (`talk/macros.tex`): Luttinger liquid `cLL` (blue, = the
