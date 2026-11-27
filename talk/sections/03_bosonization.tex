@@ -31,8 +31,7 @@
 {\small Low energy: only states near \colorbox{spinach!20}{\mystrut $\pm k_F$}:\\ right and left movers, speed $v_F$\par}
 \vspace{0.2cm}
 \onslide<2->{%
-\noindent\colorbox{citron!40}{\parbox{\dimexpr\linewidth-2\fboxsep}{\centering\vspace{1pt}\footnotesize $c_\sigma(x)\sim\displaystyle\sum_{r=\pm}e^{\imag rk_Fx}\,e^{\imag\sqrt\pi\,(r\phi_\sigma+\theta_\sigma)}$\vspace{1pt}}}\\[1pt]
-{\centering\scriptsize$\phi_{c/s}=\tfrac{\phi_\uparrow\pm\phi_\downarrow}{\sqrt2}$\par}}
+\noindent\colorbox{citron!40}{\parbox{\dimexpr\linewidth-2\fboxsep}{\centering\vspace{1pt}\footnotesize $c_\uparrow(x)\sim e^{\imag k_Fx}\,e^{\imag\sqrt{\pi/2}\,({\color{cLL}\phi_c}+{\color{orchid}\phi_s}+\theta_c+\theta_s)}$\vspace{1pt}}}\par}
 \vspace{0.1cm}
 \onslide<3->{%
 {\footnotesize \colorbox{cLL!20}{\mystrut charge}: $\rho=\sqrt{\tfrac2\pi}\,\partial_x{\color{cLL}\phi_c}$\hspace{0.5cm}
@@ -44,10 +43,10 @@
 \centering
 \begin{tikzpicture}[font=\scriptsize]
  \def\h{0.14}\def\hs{0.2}\def\w{0.07}
- \def\bc{0.95}\def\bs{-0.95}
+ \def\bc{1.05}\def\bs{-1.15}
  \draw[mygray,thick] (0,0)--(9.4,0);
  \foreach \i in {0,...,13} \pic[scale=0.9] at ({1.0+0.6*\i},0) {site};
- \begin{scope}[on background layer]\foreach \x in {1.0,2.2,2.8,4.6,5.2,6.4,7.6,8.8} \draw[mygray,densely dotted] (\x,-1.1)--(\x,{\bc+8*\h+0.05});\end{scope}
+ \begin{scope}[on background layer]\foreach \x in {1.0,2.2,2.8,4.6,5.2,6.4,7.6,8.8} \draw[mygray,densely dotted] (\x,{\bs-0.15})--(\x,{\bc+8*\h+0.05});\end{scope}
  \only<5->{\begin{scope}[on background layer]\fill[citron!40,rounded corners=3pt] (4.9,-0.4) rectangle (5.5,0.43);\end{scope}}
  \foreach \x/\p in {1.0/eup,2.2/edn,2.8/eup,4.6/eup,6.4/eup,7.6/edn,8.8/edn} \path (\x,0) pic {\p};
  \only<-4>{\path (5.2,0) pic {edn};}\only<5->{\path (5.2,0) pic {eup};}

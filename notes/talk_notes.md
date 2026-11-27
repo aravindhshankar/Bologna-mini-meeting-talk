@@ -200,3 +200,6 @@ LRO 1:00 · large N 1:15 · Green's fn 0:45 · conclusion 1:00 · thanks 0:15.
   the current step's term highlighted in its colour (\alt colorbox vs white box, no jump).
 - 2026-11-26: slide 8 boxes schematic (user): exponents |x|^{-1/K_s}, |x|^{-K_s}, no 2pi factors (normalisation
   dropped on purpose; precise: 1/(2pi K_s), K_s/(2pi)).
+- 2026-11-27: slide 5 box = paper Eq. 23 only, c_up ~ e^{ik_F x} e^{i sqrt(pi/2)(phi_c+phi_s+theta_c+theta_s)}
+  (right mover; phi_c/s coloured); phi_{c/s} definition line dropped; staircase curves moved off the
+  electrons. Talk title (user): "Continuous symmetry breaking in 1+1D field theory".
