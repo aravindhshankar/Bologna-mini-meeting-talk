@@ -86,13 +86,15 @@
  \foreach \x in {0,4.5} \draw[repel,cVpm] ({\x+0.22},\yt)--({\x+0.53},\yt);
  \node[cVpm,anchor=west] at (7.4,{\yt-1.42}) {$V_{+-}$: \textbf{saves}};}
 \end{tikzpicture}\par
-\vspace{1.2cm}
+\vspace{0.9cm}
 % H as on slide 2; the term of the current step is highlighted in its colour (white box otherwise, so nothing moves)
 {\small$H=$\
 $-t\sum_{i\sigma}\big(c^\dagger_{i\sigma}c^{\phantom\dagger}_{i+1,\sigma}+\text{h.c.}\big)$
 $+$\,\alt<1>{\colorbox{cU!25}}{\colorbox{white}}{$\mystrut{\color{cU}U}\sum_i n_{i\uparrow}n_{i\downarrow}$}\\[5pt]
 $+$\,\alt<2>{\colorbox{cVpp!25}}{\colorbox{white}}{$\mystrut{\color{cVpp}V_{++}}\sum_{i\sigma}n_{i\sigma}n_{i+1,\sigma}$}
 $+$\,\alt<3>{\colorbox{cVpm!25}}{\colorbox{white}}{$\mystrut{\color{cVpm}V_{+-}}\sum_{i\sigma}n_{i\sigma}n_{i+1,\bar\sigma}$}\par}
+\vspace{0.5cm}
+{\small symmetry: \colorbox{cLL!20}{\mystrut $\mathrm{U}(1)\rtimes\mathbb Z_2$}\ \ (spin rotations about $z$, $\uparrow\leftrightarrow\downarrow$)\par}
 \end{frame}
 % Notes: Two copies of the same chain with the same number of electrons: on top the spins are mixed, <S^z> = 0; below, magnetized: mostly up.
 % Notes: Step 1: U: two up electrons cannot share a site, so magnetizing removes the doubly occupied site: saves on-site repulsion.
