@@ -203,3 +203,6 @@ LRO 1:00 · large N 1:15 · Green's fn 0:45 · conclusion 1:00 · thanks 0:15.
 - 2026-11-27: slide 5 box = paper Eq. 23 only, c_up ~ e^{ik_F x} e^{i sqrt(pi/2)(phi_c+phi_s+theta_c+theta_s)}
   (right mover; phi_c/s coloured); phi_{c/s} definition line dropped; staircase curves moved off the
   electrons. Talk title (user): "Continuous symmetry breaking in 1+1D field theory".
+- 2026-11-27: slide 4 symmetry line removed (now on slide 3). Conclusion: outlook dropped (kept in its
+  speaker notes), table gets a "phase <(theta_x-theta_0)^2>" row with the two integrals (ln|x| vs finite).
+  The z=2 integral is now the first backup slide.

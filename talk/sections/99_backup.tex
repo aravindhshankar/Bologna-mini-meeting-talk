@@ -2,6 +2,37 @@
 % Backup slides
 % ============================================================
 \begin{frame}[t]
+\ft{The $z=2$ integral}\par
+\vspace{1.2cm}
+\begin{columns}[T]
+\begin{column}{0.48\textwidth}
+\centering
+\colorbox{cLL!20}{\parbox{4.75cm}{\centering\footnotesize
+ \textbf{Luttinger liquid}\\[3pt]
+ $\langle(\theta_x-\theta_0)^2\rangle$\\[1pt]
+ \parbox[c][1.0cm][c]{\linewidth}{\centering
+ $\displaystyle\propto\int\!\dd k\,\dd\omega\,\frac{1-\cos kx}{\omega^2+k^2}$\\[2pt]
+ $\displaystyle\sim\ln|x|$}\\[2pt]
+ \textbf{no order}\mystrut}}
+\end{column}
+\begin{column}{0.48\textwidth}
+\centering
+\colorbox{cQCP!15}{\parbox{4.75cm}{\centering\footnotesize
+ \textbf{critical point}\\[3pt]
+ $\langle(\theta_x-\theta_0)^2\rangle$\\[1pt]
+ \parbox[c][1.0cm][c]{\linewidth}{\centering
+ \only<-1>{$\displaystyle\propto\int\!\dd k\,\dd\omega\,\frac{k^2(1-\cos kx)}{\omega^2+k^4}$}%
+ \only<2->{$\displaystyle=\int\!\dd k\,\frac{1-\cos kx}{2}$\\[2pt]\textbf{finite}}}\\[2pt]
+ \onslide<2->{\textbf{order}}\mystrut}}
+\end{column}
+\end{columns}
+\vspace{0.9cm}
+\centering
+{\footnotesize magnetization $S^z\propto\partial_x\phi$ is conjugate to $\theta$: free to fluctuate at $\Delta V_c$\par}
+\end{frame}
+% Notes: Gaussian propagator check. LL: omega^2+k^2 gives log growth, no order. z=2: k^2/(omega^2+k^4): the omega integral kills the 1/k, leaving a finite integral, so theta orders.
+
+\begin{frame}[t]
 \ft{Spins carry a Berry phase}\par
 \vspace{0.5cm}
 \begin{columns}[c]
@@ -124,34 +155,3 @@ $\displaystyle \mathcal L=-i\rho\,\partial_\tau\theta+\colorbox{pumpkin!50}{$\my
 % Notes: For theta: the cost saturates with distance -> constant correlator -> LRO, now in a controlled calculation (blue curve).
 % Notes: Step 2: for the conjugate phi vertex, the source back-reacts: it changes the local stiffness r of the critical theory, r ~ (d_x u)^4, giving a nonlinear action with a (d_x u)^6 term.
 % Notes: Step 3: balance the source against the time-derivative term and the sixth-power term: u ~ x^{2/3}, tau ~ x^{5/3}. The action grows like x^{2/3}: a stretched exponential, between a Gaussian exponential and a power law. Red curve: full numerical saddle, black dashed = x^{2/3} fit.
-
-\begin{frame}[t]
-\ft{The $z=2$ integral}\par
-\vspace{1.2cm}
-\begin{columns}[T]
-\begin{column}{0.48\textwidth}
-\centering
-\colorbox{cLL!20}{\parbox{4.75cm}{\centering\footnotesize
- \textbf{Luttinger liquid}\\[3pt]
- $\langle(\theta_x-\theta_0)^2\rangle$\\[1pt]
- \parbox[c][1.0cm][c]{\linewidth}{\centering
- $\displaystyle\propto\int\!\dd k\,\dd\omega\,\frac{1-\cos kx}{\omega^2+k^2}$\\[2pt]
- $\displaystyle\sim\ln|x|$}\\[2pt]
- \textbf{no order}\mystrut}}
-\end{column}
-\begin{column}{0.48\textwidth}
-\centering
-\colorbox{cQCP!15}{\parbox{4.75cm}{\centering\footnotesize
- \textbf{critical point}\\[3pt]
- $\langle(\theta_x-\theta_0)^2\rangle$\\[1pt]
- \parbox[c][1.0cm][c]{\linewidth}{\centering
- \only<-1>{$\displaystyle\propto\int\!\dd k\,\dd\omega\,\frac{k^2(1-\cos kx)}{\omega^2+k^4}$}%
- \only<2->{$\displaystyle=\int\!\dd k\,\frac{1-\cos kx}{2}$\\[2pt]\textbf{finite}}}\\[2pt]
- \onslide<2->{\textbf{order}}\mystrut}}
-\end{column}
-\end{columns}
-\vspace{0.9cm}
-\centering
-{\footnotesize magnetization $S^z\propto\partial_x\phi$ is conjugate to $\theta$: free to fluctuate at $\Delta V_c$\par}
-\end{frame}
-% Notes: Gaussian propagator check. LL: omega^2+k^2 gives log growth, no order. z=2: k^2/(omega^2+k^4): the omega integral kills the 1/k, leaving a finite integral, so theta orders.
